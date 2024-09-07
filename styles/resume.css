@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", system-ui;
+    font-weight: 400;
+    font-style: normal;
+   
+}
+body{
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+}
+.resume{
+    margin: 50px 0;
+    width: 80vw;
+    /* padding: 40px 0; */
+    /* border: 2px solid black; */
+    border-radius: 5px;
+    background-color: rgb(230, 200, 162);
+}
+.user-img-name{
+    background-color: burlywood;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.usr-img img{
+    width: 150px;     
+    height: 150px;     /* Set the desired height */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 50%;
+    position: relative;
+    top: 5px;
+}
+.user-name {
+    border-bottom: 2px solid black;
+    padding-bottom: 30px;
+}
+.user-name h1{
+    font-size: 60px;
+    font-family: "New Amsterdam", system-ui;
+    font-weight: 400;
+}
+.user-name h2{
+    font-family: "New Amsterdam", system-ui;
+    font-weight: 400;
+    /* font-size: 25px; */
+}
+.contect-about{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    left: 70px;
+    padding: 40px 0;
+}
+.contact h3{
+    font-family: "New Amsterdam", system-ui;
+    font-weight: 400;
+    padding-bottom: 6px;
+    font-size: 25px;
+}
+.contact p{
+    padding-bottom: 5px;
+
+}
+.about h3{
+    font-family: "New Amsterdam", system-ui;
+    font-weight: 400;
+    padding-bottom: 5px;
+    font-size: 25px;
+}
+.about p{
+    width: 40vw;
+}
+.education-experience{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    left: 70px;
+    padding-bottom: 40px;
+}
+.education{
+    text-transform: uppercase;
+    /* font-weight: 800; */
+}
+.education h3{
+    font-family: "New Amsterdam", system-ui;
+    font-weight: 400;
+    padding-bottom: 5px;
+    font-size: 25px;
+}
+.work-experience{
+    border-left: 2px solid black;
+    padding-left: 25px;
+}
+.work-experience h3{
+    font-family: "New Amsterdam", system-ui;
+    font-weight: 400;
+    padding-bottom: 5px;
+    font-size: 25px;
+}
+.work p{
+    width: 40vw;
+    padding-bottom: 5px;
+    /* font-weight:700; */
+}
+.work h4{
+    font-weight: 500;
+}
+.work h5{
+    padding-bottom: 5px;
+    font-weight:600;
+}
+.work h6{
+    font-weight: 600;
+}
+.skill-language{
+    display: flex;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+    position: relative;
+    left: -120px;
+    padding-bottom: 30px;
+}
+.skill-language h3{
+    font-family: "New Amsterdam", system-ui;
+    font-weight: 400;
+    padding-bottom: 5px;
+    font-size: 25px;   
+}
+.skill-language ul {
+    list-style: square;
+}
