@@ -12,6 +12,19 @@ body{
     display: flex;
     justify-content: center;
 }
+.edit-btn{
+    padding: 20px ;
+    background-color: burlywood;
+    border: none;
+    font-family: "New Amsterdam", system-ui;
+    font-weight: 400;
+    font-size: 20px;
+    border-radius: 50%;
+    position: relative;
+    left: -35px;
+    top: 20px;
+    cursor: pointer;
+}
 .resume{
     margin: 50px 0;
     width: 80vw;
@@ -66,7 +79,8 @@ body{
 }
 .contact p{
     padding-bottom: 5px;
-
+    /* width: 5px; */
+    font-size: 15px;
 }
 .about h3{
     font-family: "New Amsterdam", system-ui;
@@ -75,7 +89,9 @@ body{
     font-size: 25px;
 }
 .about p{
-    width: 40vw;
+    width: 27vw;
+    word-wrap: break-word; /* Ensure long words or URLs break and wrap onto the next line */
+  white-space: pre-wrap; 
 }
 .education-experience{
     display: flex;
@@ -105,9 +121,11 @@ body{
     font-size: 25px;
 }
 .work p{
-    width: 40vw;
+    width: 27vw;
     padding-bottom: 5px;
     /* font-weight:700; */
+    word-wrap: break-word; /* Ensure long words or URLs break and wrap onto the next line */
+    white-space: pre-wrap; 
 }
 .work h4{
     font-weight: 500;
@@ -124,7 +142,7 @@ body{
     justify-content: space-evenly;
     text-transform: uppercase;
     position: relative;
-    left: -120px;
+    left: -70px;
     padding-bottom: 30px;
 }
 .skill-language h3{
@@ -135,4 +153,24 @@ body{
 }
 .skill-language ul {
     list-style: square;
+    /* padding-left: 90px; */
+    position: relative;
+    left: 30px;
+}
+.data-not-found{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.data-not-found h1{
+    font-size: 35px;
+    color: crimson;
+}
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 35PX;
 }
