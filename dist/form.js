@@ -20,33 +20,9 @@ let userPortfolio = document.getElementById("portfolio");
 let userPicture = document.getElementById("picture");
 let userProfile = document.getElementById("profile");
 // HTML Form
-let resumeForm = document.querySelector(".resume-form");
-//Set Input Field Empty
-const emptyInput = () => {
-    userName.value = '';
-    userEmail.value = '';
-    userJob.value = '';
-    userNum.value = '';
-    schoolName.value = '';
-    schoolPeriod.value = '';
-    collegeName.value = '';
-    collegePeriod.value = '';
-    universityName.value = '';
-    universitySub.value = '';
-    universityPeriod.value = '';
-    lastCompany.value = '';
-    periodCompany.value = '';
-    workExperience.value = '';
-    userAddress.value = '';
-    userPortfolio.value = '';
-    userProfile.value = '';
-    userLanguage.value = '';
-    userSkill.value = '';
-    lastJob.value = '';
-    userPicture.value = '';
-};
+let resumeForm = document.querySelector("#form-edit-resume");
 //Handle Name
-let userTrue = false;
+let userTrue = true;
 userName?.addEventListener("blur", (e) => {
     if (userName.value.trim() === "" || userName.value.length < 10) {
         // console.log(userName.nextElementSibling);
@@ -62,7 +38,7 @@ userName?.addEventListener("blur", (e) => {
     ;
 });
 // Handle Email
-let emailTrue = false;
+let emailTrue = true;
 userEmail?.addEventListener("blur", () => {
     if (userEmail.value.match(/^[a-zA-Z0-9\_\.\%\+\-]+\@[a-zA-Z0-9\.\-]+\.[a-z]{2,7}$/)) {
         emailTrue = true;
@@ -77,7 +53,7 @@ userEmail?.addEventListener("blur", () => {
     ;
 });
 // Handle Phone Number
-let numberTrue = false;
+let numberTrue = true;
 userNum?.addEventListener("blur", () => {
     if (userNum.value.match(/^[0-9]{11}$/)) {
         numberTrue = true;
@@ -91,7 +67,7 @@ userNum?.addEventListener("blur", () => {
     }
 });
 // Handle Job Title
-let jobTrue = false;
+let jobTrue = true;
 userJob?.addEventListener("blur", () => {
     if (userJob.value.trim() === "" || userJob.value.length < 10) {
         userJob.nextElementSibling.textContent = "Please Enter Job Name atleast 10 character";
@@ -105,7 +81,7 @@ userJob?.addEventListener("blur", () => {
     }
 });
 // Handle Skill
-let skillTrue = false;
+let skillTrue = true;
 userSkill?.addEventListener("blur", () => {
     if (userSkill.value.trim() === "" || userSkill.value.length < 3) {
         userSkill.nextElementSibling.textContent = "Please Enter a skill atleast ";
@@ -119,7 +95,7 @@ userSkill?.addEventListener("blur", () => {
     }
 });
 // Handle School Name
-let schoolNameTrue = false;
+let schoolNameTrue = true;
 schoolName?.addEventListener("blur", () => {
     if (schoolName.value.trim() === "" || schoolName.value.length < 9) {
         schoolName.nextElementSibling.textContent = "Please Enter atleast 9 character";
@@ -133,7 +109,7 @@ schoolName?.addEventListener("blur", () => {
     }
 });
 // Handle School Period
-let schoolPeriodTrue = false;
+let schoolPeriodTrue = true;
 schoolPeriod?.addEventListener("blur", () => {
     if (schoolPeriod.value.trim() === "" || schoolPeriod.value.length < 9) {
         schoolPeriod.nextElementSibling.textContent = "Please Enter atleast 9 character";
@@ -147,7 +123,7 @@ schoolPeriod?.addEventListener("blur", () => {
     }
 });
 // Handle College Name
-let collegeNameTrue = false;
+let collegeNameTrue = true;
 collegeName?.addEventListener("blur", () => {
     if (collegeName.value.trim() === "" || collegeName.value.length < 9) {
         collegeName.nextElementSibling.textContent = "Please Enter atleast 9 character";
@@ -161,7 +137,7 @@ collegeName?.addEventListener("blur", () => {
     }
 });
 // Handle College Period
-let collegePeriodTrue = false;
+let collegePeriodTrue = true;
 collegePeriod?.addEventListener("blur", () => {
     if (collegePeriod.value.trim() === "" || collegePeriod.value.length < 9) {
         collegePeriod.nextElementSibling.textContent = "Please Enter atleast 9 character";
@@ -175,7 +151,7 @@ collegePeriod?.addEventListener("blur", () => {
     }
 });
 // Handle University Name
-let universityNameTrue = false;
+let universityNameTrue = true;
 universityName?.addEventListener("blur", () => {
     if (universityName.value.trim() === "" || universityName.value.length < 9) {
         universityName.nextElementSibling.textContent = "Please Enter atleast 9 character";
@@ -189,7 +165,7 @@ universityName?.addEventListener("blur", () => {
     }
 });
 // Handle University Subject
-let universitySubTrue = false;
+let universitySubTrue = true;
 universitySub?.addEventListener("blur", () => {
     if (universitySub.value.trim() === "" || universitySub.value.length < 20) {
         universitySub.nextElementSibling.textContent = "Please Enter atleast 20 character";
@@ -203,7 +179,7 @@ universitySub?.addEventListener("blur", () => {
     }
 });
 // Handle College Period
-let universityPeriodTrue = false;
+let universityPeriodTrue = true;
 universityPeriod?.addEventListener("blur", () => {
     if (universityPeriod.value.trim() === "" || universityPeriod.value.length < 9) {
         universityPeriod.nextElementSibling.textContent = "Please Enter atleast 9 character";
@@ -217,7 +193,7 @@ universityPeriod?.addEventListener("blur", () => {
     }
 });
 //Handle Address
-let addressTrue = false;
+let addressTrue = true;
 userAddress?.addEventListener("blur", () => {
     if (userAddress.value.trim() === "" || userAddress.value.length < 10) {
         userAddress.nextElementSibling.textContent = "Please Enter atleast 9 character";
@@ -231,7 +207,7 @@ userAddress?.addEventListener("blur", () => {
     }
 });
 // Handle Last Job
-let lastJobTrue = false;
+let lastJobTrue = true;
 lastJob?.addEventListener("blur", () => {
     if (lastJob.value.trim() === "" || lastJob.value.length < 10) {
         lastJob.nextElementSibling.textContent = "Please Enter atleast 10 character";
@@ -245,7 +221,7 @@ lastJob?.addEventListener("blur", () => {
     }
 });
 // Handle Last Company
-let lastCompanyTrue = false;
+let lastCompanyTrue = true;
 lastCompany?.addEventListener("blur", () => {
     if (lastCompany.value.trim() === "" || lastCompany.value.length < 10) {
         lastCompany.nextElementSibling.textContent = "Please Enter atleast 10 character";
@@ -259,7 +235,7 @@ lastCompany?.addEventListener("blur", () => {
     }
 });
 // Handle Last Company Period
-let lastCompanyPeriodTrue = false;
+let lastCompanyPeriodTrue = true;
 periodCompany?.addEventListener("blur", () => {
     if (periodCompany.value.trim() === "" || periodCompany.value.length < 9) {
         periodCompany.nextElementSibling.textContent = "Please Enter atleast 9 character";
@@ -273,7 +249,7 @@ periodCompany?.addEventListener("blur", () => {
     }
 });
 // Handle Last Company Period
-let lastCompanyWorkTrue = false;
+let lastCompanyWorkTrue = true;
 workExperience?.addEventListener("blur", () => {
     if (workExperience.value.trim() === "" || workExperience.value.length < 20) {
         workExperience.nextElementSibling.textContent = "Please Enter atleast 20 character";
@@ -287,7 +263,7 @@ workExperience?.addEventListener("blur", () => {
     }
 });
 // Handle User Language
-let userLanguageTrue = false;
+let userLanguageTrue = true;
 userLanguage?.addEventListener("blur", () => {
     if (userLanguage.value.trim() === "" || userLanguage.value.length < 4) {
         userLanguage.nextElementSibling.textContent = "Please Enter atleast 4 character";
@@ -301,7 +277,7 @@ userLanguage?.addEventListener("blur", () => {
     }
 });
 // Handle Last Company Period
-let profileTrue = false;
+let profileTrue = true;
 userProfile?.addEventListener("blur", () => {
     if (userProfile.value.trim() === "" || userProfile.value.length < 20) {
         userProfile.nextElementSibling.textContent = "Please Enter atleast 20 character";
@@ -315,7 +291,7 @@ userProfile?.addEventListener("blur", () => {
     }
 });
 // Handle User Portfolio
-let portfolioTrue = false;
+let portfolioTrue = true;
 let portfolioRegex = /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*\/?$/;
 userPortfolio?.addEventListener("blur", () => {
     if (userPortfolio.value.match(portfolioRegex)) {
@@ -350,43 +326,88 @@ userPicture?.addEventListener("blur", () => {
         pictureTrue = false;
     }
 });
-// Handle Resume Form
+// Handle Form For Edit Resume
 // Object for resume data
-// let resumeData = localStorage.getItem('Resume-Data');
-let resumeObj;
+let resumeData = localStorage.getItem('Resume-Data');
+let resumeObj = JSON.parse(resumeData);
+// Update Data for Local Storage
+const updateJsonData = () => {
+};
+//Get CV Container for show and hide
+let cvContainer = document.getElementById("cv-container");
+//Get Edit CV Container for show and hide 
+let updateCv = document.getElementById("edit-resume-form");
 resumeForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (userTrue && emailTrue && numberTrue && jobTrue && lastJobTrue && lastCompanyTrue && lastCompanyPeriodTrue && lastCompanyWorkTrue && addressTrue && portfolioTrue && pictureTrue && profileTrue && userLanguageTrue && skillTrue && schoolNameTrue && schoolPeriodTrue && collegeNameTrue && collegePeriodTrue && universityNameTrue && universityPeriodTrue && universitySubTrue) {
-        alert("Congratulations, Your form has been submitted.");
         resumeObj = {
             name: userName.value,
-            number: userNum.value,
             email: userEmail.value,
             jobTitle: userJob.value,
-            lastJob: lastJob.value,
+            number: userNum.value,
+            schoolName: schoolName.value,
+            schoolPeriod: schoolPeriod.value,
+            collegeName: collegeName.value,
+            collegePeriod: collegePeriod.value,
+            university: universityName.value,
+            universitySub: universitySub.value,
+            universityPeriod: universityPeriod.value,
             lastCompany: lastCompany.value,
-            periodCompany: periodCompany.value,
+            lastJob: lastJob.value,
             work: workExperience.value,
             address: userAddress.value,
             portfolio: userPortfolio.value,
             profile: userProfile.value,
             language: userLanguage.value.split(" "),
             skill: userSkill.value.split(" "),
-            schoolName: schoolName.value,
-            schoolPeriod: schoolPeriod.value,
-            collegeName: collegeName.value,
-            collegePeriod: collegePeriod.value,
-            university: universityName.value,
-            universityPeriod: universityPeriod.value,
-            universitySub: universitySub.value,
             img: userPicture.value,
+            periodCompany: periodCompany.value,
         };
         localStorage.setItem("Resume-Data", JSON.stringify(resumeObj));
-        window.location.href = './component/resume.html';
-        emptyInput();
+        alert("Congratulations, Your form has been Edit Successfully.");
+        cvContainer.classList.remove("hide");
+        updateCv.classList.add("hide");
+        // updateJsonData();
+        // window.location.href = './component/resume.html';
+        // emptyInput();
     }
     else {
         alert("Sorry, Your Form has not been Submit.");
     }
+});
+//  Set Input Value from Local Storage
+const editCv = () => {
+    let getItem = localStorage.getItem("Resume-Data");
+    let convObj = JSON.parse(getItem);
+    userName.value = convObj.name;
+    userEmail.value = convObj.email;
+    userJob.value = convObj.jobTitle;
+    userNum.value = convObj.number;
+    schoolName.value = convObj.schoolName;
+    schoolPeriod.value = convObj.schoolPeriod;
+    collegeName.value = convObj.collegeName;
+    collegePeriod.value = convObj.collegePeriod;
+    universityName.value = convObj.university;
+    universitySub.value = convObj.universitySub;
+    universityPeriod.value = convObj.universityPeriod;
+    lastCompany.value = convObj.lastCompany;
+    periodCompany.value = convObj.collegePeriod;
+    workExperience.value = convObj.work;
+    userAddress.value = convObj.address;
+    userPortfolio.value = convObj.portfolio;
+    userProfile.value = convObj.profile;
+    userLanguage.value = convObj.language.join(" ");
+    userSkill.value = convObj.skill.join(" ");
+    lastJob.value = convObj.lastJob;
+    userPicture.value = convObj.img;
+    console.log(userPicture.value);
+};
+// For Edit the Resume
+let editBtn = document.querySelector(".editbtn");
+editBtn.addEventListener("click", () => {
+    // console.log(editBtn);
+    cvContainer.classList.add("hide");
+    updateCv.classList.remove("hide");
+    editCv();
 });
 export {};

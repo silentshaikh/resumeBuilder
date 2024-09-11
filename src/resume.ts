@@ -1,8 +1,12 @@
 import type { Resume } from "./type.js";
+// import { userAddress,userEmail,userJob,userLanguage,userName,userNum,userPicture,userPortfolio,userProfile,schoolName ,schoolPeriod,collegeName,collegePeriod,universityName,universityPeriod,universitySub,lastCompany,lastJob,periodCompany,workExperience,userSkill} from "./app.js";
 let resumeParent = document.getElementById("resume-parent") as HTMLElement;
-let editResumeBtn = document.querySelector(".edit-btn") as HTMLElement;
+let downloadResumeBtn = document.querySelector(".downladPdf") as HTMLElement;
+
+
+
 (() => {
-let getResumeFromLocl = localStorage.getItem("Resume-Data")
+let getResumeFromLocl = localStorage.getItem("Resume-Data");
 let strtoObj:Resume = JSON.parse(getResumeFromLocl as string)
     console.log(strtoObj);
     if(!strtoObj){
@@ -10,10 +14,10 @@ let strtoObj:Resume = JSON.parse(getResumeFromLocl as string)
                 <h1>DATA - NOT - AVAILABLE</h1>
             </section>`;
     }else{
-        resumeParent.innerHTML =  `<section class="resume">
+        resumeParent.innerHTML =  `<section class="resume" id="resum">
                 <div class="user-img-name">
                     <div class="usr-img">
-                        <img src="./${strtoObj.img}" alt="resume-image">
+                        <img src="${strtoObj.img}" alt="resume-image">
                     </div>
                     <div class="user-name">
                         <h1 >${strtoObj.name}</h1>
@@ -80,7 +84,29 @@ let strtoObj:Resume = JSON.parse(getResumeFromLocl as string)
                 </div>
             </section> `;
     }
-    editResumeBtn.addEventListener("click",() => {
-        window.location.href = "/";
-})
+
+    let resumeGet = document.querySelector("#resum") as HTMLElement;
+function downloadPdf() {
+        const options = {
+        margin: 10, // Margin for the PDF
+        filename: 'resume.pdf', // File name for the PDF
+        image: { type: 'jpeg', quality: 0.98 }, // Image type and quality
+        html2canvas: { scale: 2 }, // Increases resolution for canvas
+        jsPDF: { unit: 'mm', format: [297, 320], orientation: 'portrait' } // PDF format options
+      };
+  
+      if (resumeGet) {
+        html2pdf().from(resumeGet).set(options).save().then(() => {
+          console.log("PDF generated successfully!");
+        }).catch((error: any) => {
+          console.error("Error generating PDF:", error);
+        });
+      } else {
+        console.error("Resume element not found.");
+      }
+}
+    downloadResumeBtn.addEventListener("click",() => {
+        downloadPdf()
+    });
+   
 })();

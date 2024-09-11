@@ -1,27 +1,54 @@
 import type { Resume } from "./type.js";
-  let userName = document.getElementById("username") as HTMLInputElement;
+ let userName = document.getElementById("username") as HTMLInputElement;
  let userEmail = document.getElementById("useremail") as HTMLInputElement;
-  let userJob = document.getElementById("userjob") as HTMLInputElement;
-  let lastJob = document.getElementById("job") as HTMLInputElement;
-  let userNum = document.getElementById("usernumber") as HTMLInputElement;
-  let schoolName = document.getElementById("schoolname") as HTMLInputElement;
-  let schoolPeriod = document.getElementById("schoolperiod") as HTMLInputElement;
-  let collegeName = document.getElementById("collegename") as HTMLInputElement;
-  let collegePeriod = document.getElementById("collegeperiod") as HTMLInputElement;
-  let universityName = document.getElementById("university") as HTMLInputElement;
-  let universitySub = document.getElementById("universitysub") as HTMLInputElement;
-  let universityPeriod = document.getElementById("universityperiod") as HTMLInputElement;
-  let lastCompany = document.getElementById("company") as HTMLInputElement;
-  let periodCompany = document.getElementById("period") as HTMLInputElement;
-  let workExperience = document.getElementById("work-experience") as HTMLTextAreaElement;
-  let userSkill = document.getElementById("skill") as HTMLInputElement;
-  let userLanguage = document.getElementById("language") as HTMLInputElement;
-  let userAddress = document.getElementById("address") as HTMLInputElement;
-  let userPortfolio = document.getElementById("portfolio") as HTMLInputElement;
-  let userPicture = document.getElementById("picture") as HTMLInputElement;
-  let userProfile = document.getElementById("profile") as HTMLTextAreaElement;
+   let userJob = document.getElementById("userjob") as HTMLInputElement;
+   let lastJob = document.getElementById("job") as HTMLInputElement;
+   let userNum = document.getElementById("usernumber") as HTMLInputElement;
+   let schoolName = document.getElementById("schoolname") as HTMLInputElement;
+   let schoolPeriod = document.getElementById("schoolperiod") as HTMLInputElement;
+   let collegeName = document.getElementById("collegename") as HTMLInputElement;
+   let collegePeriod = document.getElementById("collegeperiod") as HTMLInputElement;
+   let universityName = document.getElementById("university") as HTMLInputElement;
+   let universitySub = document.getElementById("universitysub") as HTMLInputElement;
+   let universityPeriod = document.getElementById("universityperiod") as HTMLInputElement;
+   let lastCompany = document.getElementById("company") as HTMLInputElement;
+   let periodCompany = document.getElementById("period") as HTMLInputElement;
+   let workExperience = document.getElementById("work-experience") as HTMLTextAreaElement;
+   let userSkill = document.getElementById("skill") as HTMLInputElement;
+   let userLanguage = document.getElementById("language") as HTMLInputElement;
+   let userAddress = document.getElementById("address") as HTMLInputElement;
+   let userPortfolio = document.getElementById("portfolio") as HTMLInputElement;
+   let userPicture = document.getElementById("picture") as HTMLInputElement;
+   let userProfile = document.getElementById("profile") as HTMLTextAreaElement;
 // HTML Form
 let resumeForm = document.querySelector(".resume-form") as HTMLFormElement;
+
+
+
+//Set Input Field Empty
+const emptyInput = () => {
+    userName.value = '';
+    userEmail.value = '';
+    userJob.value = '';
+    userNum.value = '';
+    schoolName.value = '';
+    schoolPeriod.value = '';
+    collegeName.value = '';
+    collegePeriod.value = '';
+    universityName.value = '';
+    universitySub.value = '';
+    universityPeriod.value = '';
+    lastCompany.value = '';
+    periodCompany.value = '';
+    workExperience.value = '';
+    userAddress.value = '';
+    userPortfolio.value = '';
+    userProfile.value = '';
+    userLanguage.value = '';
+    userSkill.value = '';
+    lastJob.value = '';
+    userPicture.value = '';
+}
 
 //Handle Name
 let userTrue = false;
@@ -208,7 +235,7 @@ userAddress?.addEventListener("blur",() => {
 })
 
 // Handle Last Job
-let lastJobTrue = true;
+let lastJobTrue = false;
 lastJob?.addEventListener("blur",() => {
     if(lastJob.value.trim() === "" || lastJob.value.length < 10){
         (lastJob.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 10 character";
@@ -222,7 +249,7 @@ lastJob?.addEventListener("blur",() => {
 });
 
 // Handle Last Company
-let lastCompanyTrue = true;
+let lastCompanyTrue = false;
 lastCompany?.addEventListener("blur",() => {
     if(lastCompany.value.trim() === "" || lastCompany.value.length < 10){
         (lastCompany.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 10 character";
@@ -235,7 +262,7 @@ lastCompany?.addEventListener("blur",() => {
     }
 });
 // Handle Last Company Period
-let lastCompanyPeriodTrue = true;
+let lastCompanyPeriodTrue = false;
 periodCompany?.addEventListener("blur",() => {
     if(periodCompany.value.trim() === "" || periodCompany.value.length < 9){
         (periodCompany.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 9 character";
@@ -249,7 +276,7 @@ periodCompany?.addEventListener("blur",() => {
 });
 
 // Handle Last Company Period
-let lastCompanyWorkTrue = true;
+let lastCompanyWorkTrue = false;
 workExperience?.addEventListener("blur",() => {
     if(workExperience.value.trim() === "" || workExperience.value.length < 20){
         (workExperience.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 20 character";
@@ -263,7 +290,7 @@ workExperience?.addEventListener("blur",() => {
 });
 
 // Handle User Language
-let userLanguageTrue = true;
+let userLanguageTrue = false;
 userLanguage?.addEventListener("blur",() => {
     if(userLanguage.value.trim() === "" || userLanguage.value.length < 4){
         (userLanguage.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 4 character";
@@ -276,7 +303,7 @@ userLanguage?.addEventListener("blur",() => {
     }
 });
 // Handle Last Company Period
-let profileTrue = true;
+let profileTrue = false;
 userProfile?.addEventListener("blur",() => {
     if(userProfile.value.trim() === "" || userProfile.value.length < 20){
         (userProfile.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 20 character";
@@ -331,9 +358,9 @@ userPicture?.addEventListener("blur",() => {
 
 // Object for resume data
 
-let resumeData = localStorage.getItem('Resume-Data');
-let resumeObj:Resume = JSON.parse(resumeData as string);
-resumeForm.addEventListener("submit", async (e) => {
+// let resumeData = localStorage.getItem('Resume-Data');
+let resumeObj:Resume;
+resumeForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     if(userTrue && emailTrue && numberTrue && jobTrue && lastJobTrue && lastCompanyTrue && lastCompanyPeriodTrue && lastCompanyWorkTrue && addressTrue && portfolioTrue && pictureTrue && profileTrue && userLanguageTrue && skillTrue && schoolNameTrue && schoolPeriodTrue && collegeNameTrue && collegePeriodTrue && universityNameTrue && universityPeriodTrue && universitySubTrue) {
@@ -364,25 +391,8 @@ resumeForm.addEventListener("submit", async (e) => {
 
             localStorage.setItem("Resume-Data", JSON.stringify(resumeObj));
             window.location.href = './component/resume.html';
-            userName.value = '';
-            userEmail.value = '';
-            userJob.value = '';
-            userNum.value = '';
-            schoolName.value = '';
-            schoolPeriod.value = '';
-            collegeName.value = '';
-            collegePeriod.value = '';
-            universityName.value = '';
-            universitySub.value = '';
-            universityPeriod.value = '';
-            lastCompany.value = '';
-            periodCompany.value = '';
-            workExperience.value = '';
-            userAddress.value = '';
-            userPortfolio.value = '';
-            userProfile.value = '';
-            userLanguage.value = '';
-            userSkill.value = '';
+            emptyInput();
+           
     } else {
         alert("Sorry, Your Form has not been Submit.");
     }
