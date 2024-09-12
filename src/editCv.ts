@@ -472,7 +472,7 @@ const generateLinkForShareCv = () => {
             periodCompany: strToObjectResume.periodCo
         });
         //Generate Shareable Link
-        const baseUrl = `${window.location.origin}/resume.html`
+        const baseUrl = `${window.location.origin}/component/resume.html`;
         // console.log(baseUrl)
         const shareAbleUrl = `${baseUrl}?${searchPram.toString()}`;
         console.log(shareAbleUrl)
