@@ -444,8 +444,10 @@ const generateLinkForShareCv = () => {
         // Save the data with the unique identifier
         localStorage.setItem(`ResumeData-${uniqueId}`, resumeDataForShare);
         // Generate a short URL with the unique identifier
-        const baseUrl = `${window.location.origin}/component/resume.html`;
-        const shareAbleUrl = `${baseUrl}#${uniqueId}`;
+        let gitRepo = `resumeBuilder`;
+        // const baseUrl = `${window.location.origin}/${gitRepo}/component/resume.html`;
+        const baseUrl = `${window.location.origin}/${gitRepo}/component/resume.html`;
+        const shareAbleUrl = `${baseUrl}?id=${uniqueId}`;
         // Copy the URL when clicked
         navigator.clipboard.writeText(shareAbleUrl).then(() => {
             alert(`URL has been copied`);
