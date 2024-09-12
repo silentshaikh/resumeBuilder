@@ -469,7 +469,7 @@ const generateLinkForShareCv = () => {
             language: strToObjectResume.language.join(" "),
             skill: strToObjectResume.skill.join(" "),
             img: strToObjectResume.img,
-            periodCompany: strToObjectResume.periodCo
+            periodCompany: strToObjectResume.periodCompany,
         });
         //Generate Shareable Link
         const baseUrl = `${window.location.origin}/component/resume.html`;
