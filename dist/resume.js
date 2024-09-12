@@ -120,31 +120,29 @@ let generateResumeUrl = document.querySelector(".generate-url");
         });
     };
     console.log(generateUuid());
-    generateResumeUrl.addEventListener("click", () => {
-        const resumeId = generateUuid();
-        let getResumeFromLocl = localStorage.getItem("Resume-Data");
-        let cnvInObject = JSON.parse(getResumeFromLocl);
-        localStorage.setItem(`Resume-${resumeId}`, JSON.stringify(cnvInObject));
-        const uniqueURl = `http://127.0.0.1:5500/component/resume.html/${resumeId}`;
-        console.log("resume-url", uniqueURl);
-        navigator.clipboard.writeText(uniqueURl).then((e) => {
-            alert("Resume URL has Copied");
-        }).catch((error) => {
-            console.log(`Failed to copy the url ${error}`);
-        });
-    });
-    const urlParams = new URLSearchParams(window.location.search);
-    const resumeId = urlParams.get('id');
-    if (resumeId) {
-        const storedResume = localStorage.getItem(`Resume-${resumeId}`);
-        if (storedResume) {
-            const resumeData = JSON.parse(storedResume);
-            console.log("Loaded resume from URL", resumeData);
-            // Render resume like done above
-        }
-        else {
-            console.error("No resume found for the given ID");
-        }
-    }
+    // generateResumeUrl.addEventListener("click",() => {
+    //     const resumeId = generateUuid();
+    //     let getResumeFromLocl = localStorage.getItem("Resume-Data")
+    //     let cnvInObject  = JSON.parse(getResumeFromLocl as string);
+    //     localStorage.setItem(`Resume-${resumeId}`,JSON.stringify(cnvInObject));
+    //     const uniqueURl = `http://127.0.0.1:5500/component/resume.html/${resumeId}`;
+    //     console.log("resume-url",uniqueURl)
+    //     navigator.clipboard.writeText(uniqueURl).then((e) => {
+    //         alert("Resume URL has Copied")
+    //     }).catch((error) => {
+    //         console.log(`Failed to copy the url ${error}`);
+    //     })
+    // });
+    // const resumeId = urlParams.get('id');
+    // if (resumeId) {
+    //     const storedResume = localStorage.getItem(`Resume-${resumeId}`);
+    //     if (storedResume) {
+    //         const resumeData: Resume = JSON.parse(storedResume);
+    //         console.log("Loaded resume from URL", resumeData);
+    //         // Render resume like done above
+    //     } else {
+    //         console.error("No resume found for the given ID");
+    //     }
+    // }
 })();
 export {};
