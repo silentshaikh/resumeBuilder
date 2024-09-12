@@ -455,7 +455,7 @@ const generateLinkForShareCv = () => {
 
         // Generate a short URL with the unique identifier
         const baseUrl = `${window.location.origin}/component/resume.html`;
-        const shareAbleUrl = `${baseUrl}?id=${uniqueId}`;
+        const shareAbleUrl = `${baseUrl}#${uniqueId}`;
 
         // Copy the URL when clicked
         navigator.clipboard.writeText(shareAbleUrl).then(() => {
