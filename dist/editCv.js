@@ -434,53 +434,30 @@ editBtn.addEventListener("click", () => {
     updateCv.classList.remove("hide");
     editCv();
 });
-//Generate Url For Resume Button
+//Generate a Unique Url For Each Resume 
 let generateResumeUrl = document.querySelector(".generate-url");
 const generateLinkForShareCv = () => {
     let resumeDataForShare = localStorage.getItem("Resume-Data");
     if (resumeDataForShare) {
-        let strToObjectResume = JSON.parse(resumeDataForShare);
-        let searchPram = new URLSearchParams({
-            name: strToObjectResume.name,
-            email: strToObjectResume.email,
-            jobTitle: strToObjectResume.jobTitle,
-            number: strToObjectResume.number,
-            schoolName: strToObjectResume.schoolName,
-            schoolPeriod: strToObjectResume.schoolPeriod,
-            collegeName: strToObjectResume.collegeName,
-            collegePeriod: strToObjectResume.collegePeriod,
-            university: strToObjectResume.university,
-            universitySub: strToObjectResume.universitySub,
-            universityPeriod: strToObjectResume.universityPeriod,
-            lastCompany: strToObjectResume.lastCompany,
-            lastJob: strToObjectResume.lastJob,
-            work: strToObjectResume.work,
-            address: strToObjectResume.address,
-            portfolio: strToObjectResume.portfolio,
-            profile: strToObjectResume.profile,
-            language: strToObjectResume.language.join(" "),
-            skill: strToObjectResume.skill.join(" "),
-            img: strToObjectResume.img,
-            periodCompany: strToObjectResume.periodCompany,
-        });
-        //Generate Shareable Link
+        // Generate a unique identifier 
+        const uniqueId = Date.now();
+        // Save the data with the unique identifier
+        localStorage.setItem(`ResumeData-${uniqueId}`, resumeDataForShare);
+        // Generate a short URL with the unique identifier
         const baseUrl = `${window.location.origin}/component/resume.html`;
-        // console.log(baseUrl)
-        const shareAbleUrl = `${baseUrl}?${searchPram.toString()}`;
-        console.log(shareAbleUrl);
-        //Copy the Url when click on Generate Button
+        const shareAbleUrl = `${baseUrl}?id=${uniqueId}`;
+        // Copy the URL when clicked
         navigator.clipboard.writeText(shareAbleUrl).then(() => {
-            alert(`Url has Copied`);
+            alert(`URL has been copied`);
         }).catch((error) => {
-            console.log(`Failed to Copy the URL ${error}`);
+            console.log(`Failed to copy the URL: ${error}`);
         });
-        window.history.replaceState(null, '', `?${searchPram.toString()}`);
     }
     else {
-        console.log("No Resume was Found From local Storage");
+        console.log("No resume data found in local storage");
     }
 };
-generateResumeUrl.addEventListener("click", () => {
+generateResumeUrl?.addEventListener("click", () => {
     generateLinkForShareCv();
 });
 export {};
