@@ -13,6 +13,7 @@
 </head>
 <body>
     <main>
+        <!-- Form for Edit Resumme -->
         <div class="update-cv hide" id="edit-resume-form">
             <h1>Edit Resume</h1>
             <form action="" class="resume-form" id="form-edit-resume">
@@ -113,16 +114,23 @@
             </form>
         </div> 
         <section class="cv" id="cv-container">
-            <button class="editbtn">Edit CV</button>
-        <button class="downladPdf">Download CV</button>
+            <!-- Button For Edit and Download -->
+            <div class="edit-download">
+                <button class="editbtn">Edit CV</button>
+                <button class="downladPdf">Download CV</button>
+                <button class="generate-url">Generate URl</button>
+            </div>
+            <!-- Our Resume -->
         <section id="resume-parent" >
              
         </section>
         </section>
     </main>
-
+    <!-- JS Link -->
     <script type="module" src="../dist/resume.js"></script>
-    <script type="module" src="../dist/form.js"></script>
+    <script type="module" src="../dist/editCv.js"></script>
+
+    <!-- html2pdf Link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 </body>
 </html>

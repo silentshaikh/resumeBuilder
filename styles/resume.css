@@ -47,6 +47,19 @@ body{
     color: #fff;
     cursor: pointer;   
 }
+.generate-url{
+    background-color: rgb(235, 206, 169);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 15px;
+    position: relative;
+    top: 20px;
+    font-family: "New Amsterdam", system-ui;
+    font-weight: 400;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;   
+}
 .resume{
     margin:50px 0;
     /* margin-left: -150px; */
@@ -62,12 +75,12 @@ body{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 40px 0;
+    padding: 20px 0;
 }
 
 .usr-img img{
-    width: 150px;     
-    height: 150px;     /* Set the desired height */
+    width: 200px;     
+    height: 200px;     /* Set the desired height */
     object-fit: cover; /* Ensures the image covers the area without distortion */
     border-radius: 50%;
     position: relative;
