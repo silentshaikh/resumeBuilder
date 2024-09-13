@@ -463,8 +463,8 @@ const generateLinkForShareCv = () => {
         localStorage.setItem(`ResumeData-${uniqueId}`, resumeDataForShare);
         // Generate a short URL with the unique identifier
         let gitRepo = `resumeBuilder`;
-        // const baseUrl = `${window.location.origin}/${gitRepo}/component/resume.html`;
-        const baseUrl = `${window.location.origin}/component/resume.html`;
+        // const baseUrl = `${window.location.origin}/component/resume.html`;
+        const baseUrl = `${window.location.origin}/${gitRepo}/component/resume.html`;
         const shareAbleUrl = `${baseUrl}?id=${uniqueId}`;
         // Copy the URL when clicked
         // viewOnlyResume()
