@@ -441,9 +441,27 @@ editBtn.addEventListener("click",() => {
     updateCv.classList.remove("hide");
     editCv();
 });
+let downloadResumeBtnDisbl = document.querySelector(".downladPdf") as HTMLElement;
+let generateResumeUrl = document.querySelector(".generate-url") as HTMLElement;
+//remove button when we shared the link
+const btnIsDisabled = () => {
+    editBtn.style.display = 'none';
+    downloadResumeBtnDisbl.style.display = 'none';
+    generateResumeUrl.style.display = 'none';
+};
+const viewOnlyResume = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const resumeId = urlParams.get("id");
+    if (resumeId) {
+        let sharedResumeData = localStorage.getItem(`ResumeData-${resumeId}`);
+        if (sharedResumeData) {
+            // Populate the resume data for view-only
+            btnIsDisabled(); // Call the function here to hide buttons
+        }
+    }
+}
 
 //Generate a Unique Url For Each Resume 
-let generateResumeUrl = document.querySelector(".generate-url") as HTMLElement;
 const generateLinkForShareCv = () => {
     let resumeDataForShare = localStorage.getItem("Resume-Data");
     if (resumeDataForShare) {
@@ -455,11 +473,12 @@ const generateLinkForShareCv = () => {
 
         // Generate a short URL with the unique identifier
         let gitRepo = `resumeBuilder`;
-        // const baseUrl = `${window.location.origin}/${gitRepo}/component/resume.html`;
+        // const baseUrl = `${window.location.origin}/component/resume.html`;
         const baseUrl = `${window.location.origin}/${gitRepo}/component/resume.html`;
         const shareAbleUrl = `${baseUrl}?id=${uniqueId}`;
 
         // Copy the URL when clicked
+        // viewOnlyResume()
         navigator.clipboard.writeText(shareAbleUrl).then(() => {
             alert(`URL has been copied`);
         }).catch((error) => {
@@ -472,4 +491,8 @@ const generateLinkForShareCv = () => {
 
 generateResumeUrl?.addEventListener("click", () => {
     generateLinkForShareCv();
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+    viewOnlyResume();
 });
