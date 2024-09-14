@@ -226,3 +226,77 @@ body{
 .hide{
     display: none;
 }
+@media only screen and (max-width:1200px){
+    .resume{
+        width: 80vw;
+    }
+}
+@media only screen and (max-width:930px){
+    .resume{
+        width: 90vw;
+    }
+}
+@media only screen and (max-width:778px){
+    .user-img-name{
+        flex-direction: column;
+    }
+    .contect-about{
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    .about{
+
+        padding: 20px 0;
+    }
+    .about p{
+        width: 40vw;
+    }
+    .education-experience{
+        flex-direction: column;
+        align-items: center;
+        left: 30px;
+    }
+    .work-experience{
+        border: none;
+        padding: 10px;
+    }
+    .work-experience p{
+        width: 40vw;
+    }
+}
+@media only screen and (max-width:600px) {
+    .about p{
+        width: 60vw;
+    }
+    .work-experience p{
+        width: 60vw;
+    }
+    .skill-language{
+        flex-direction: column;
+        align-items: center;
+    }
+    .skills{
+        padding-top: 20px;
+    }
+}
+@media only screen and (max-width:505px) {
+    .resume{
+        width: 100vw;
+    }
+    .contact p{
+        font-size: 13px;
+        /* width: 1; */
+    }
+}
+
+@media only screen and (max-width:417px) {
+    .editbtn{
+        font-size: 15px;
+    }
+    .downladPdf{
+        font-size: 15px;
+    }
+    .generate-url{
+        font-size: 15px;
+    }
+}

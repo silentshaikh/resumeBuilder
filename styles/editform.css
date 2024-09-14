@@ -106,3 +106,22 @@ margin: 0 20px;
 .hide{
     display: none;
 }
+@media only screen and (max-width:955px){
+    .header-resume h4{
+        padding: 0 40px;
+    }
+    .header-resume h1{
+        font-size: 30px;
+    }
+}
+@media only screen and (max-width:700px){
+     .form-1 input{
+        width: 40vw;
+     }
+     #profile{
+        width: 40vw;
+     }
+     #work-experience{
+        width: 40vw;
+     }
+}

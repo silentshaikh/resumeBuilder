@@ -441,22 +441,26 @@ editBtn.addEventListener("click",() => {
     updateCv.classList.remove("hide");
     editCv();
 });
+
 let downloadResumeBtnDisbl = document.querySelector(".downladPdf") as HTMLElement;
 let generateResumeUrl = document.querySelector(".generate-url") as HTMLElement;
+
 //remove button when we shared the link
 const btnIsDisabled = () => {
     editBtn.style.display = 'none';
     downloadResumeBtnDisbl.style.display = 'none';
     generateResumeUrl.style.display = 'none';
 };
+
+//only resume show
 const viewOnlyResume = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const resumeId = urlParams.get("id");
     if (resumeId) {
         let sharedResumeData = localStorage.getItem(`ResumeData-${resumeId}`);
         if (sharedResumeData) {
-            // Populate the resume data for view-only
-            btnIsDisabled(); // Call the function here to hide buttons
+          // Call the function here to hide buttons
+            btnIsDisabled(); 
         }
     }
 }
@@ -472,13 +476,10 @@ const generateLinkForShareCv = () => {
         localStorage.setItem(`ResumeData-${uniqueId}`, resumeDataForShare);
 
         // Generate a short URL with the unique identifier
-        let gitRepo = `resumeBuilder`;
-        // const baseUrl = `${window.location.origin}/component/resume.html`;
-        const baseUrl = `${window.location.origin}/${gitRepo}/component/resume.html`;
+        const baseUrl = `${window.location.origin}/component/resume.html`;
         const shareAbleUrl = `${baseUrl}?id=${uniqueId}`;
 
         // Copy the URL when clicked
-        // viewOnlyResume()
         navigator.clipboard.writeText(shareAbleUrl).then(() => {
             alert(`URL has been copied`);
         }).catch((error) => {
@@ -489,10 +490,12 @@ const generateLinkForShareCv = () => {
     }
 }
 
+//Generate a link
 generateResumeUrl?.addEventListener("click", () => {
     generateLinkForShareCv();
 });
 
+//show only resume on the share link page
 window.addEventListener("DOMContentLoaded", () => {
     viewOnlyResume();
 });

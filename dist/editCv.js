@@ -442,14 +442,15 @@ const btnIsDisabled = () => {
     downloadResumeBtnDisbl.style.display = 'none';
     generateResumeUrl.style.display = 'none';
 };
+//only resume show
 const viewOnlyResume = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const resumeId = urlParams.get("id");
     if (resumeId) {
         let sharedResumeData = localStorage.getItem(`ResumeData-${resumeId}`);
         if (sharedResumeData) {
-            // Populate the resume data for view-only
-            btnIsDisabled(); // Call the function here to hide buttons
+            // Call the function here to hide buttons
+            btnIsDisabled();
         }
     }
 };
@@ -462,12 +463,9 @@ const generateLinkForShareCv = () => {
         // Save the data with the unique identifier
         localStorage.setItem(`ResumeData-${uniqueId}`, resumeDataForShare);
         // Generate a short URL with the unique identifier
-        let gitRepo = `resumeBuilder`;
-        // const baseUrl = `${window.location.origin}/component/resume.html`;
-        const baseUrl = `${window.location.origin}/${gitRepo}/component/resume.html`;
+        const baseUrl = `${window.location.origin}/component/resume.html`;
         const shareAbleUrl = `${baseUrl}?id=${uniqueId}`;
         // Copy the URL when clicked
-        // viewOnlyResume()
         navigator.clipboard.writeText(shareAbleUrl).then(() => {
             alert(`URL has been copied`);
         }).catch((error) => {
@@ -478,9 +476,11 @@ const generateLinkForShareCv = () => {
         console.log("No resume data found in local storage");
     }
 };
+//Generate a link
 generateResumeUrl?.addEventListener("click", () => {
     generateLinkForShareCv();
 });
+//show only resume on the share link page
 window.addEventListener("DOMContentLoaded", () => {
     viewOnlyResume();
 });
