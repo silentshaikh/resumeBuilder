@@ -52,8 +52,8 @@ const emptyInput = () => {
 
 //Handle Name
 let userTrue = false;
-userName?.addEventListener("blur", (e) => {
-    if (userName.value.trim() === "" || userName.value.length < 10) {
+userName?.addEventListener("input", (e) => {
+    if (userName.value.trim() === "" || userName.value.length < 8) {
         // console.log(userName.nextElementSibling);
       (userName.nextElementSibling as HTMLElement).textContent = "Please Enter a username atleast 8 character";
       setTimeout(() => {
@@ -68,7 +68,7 @@ userName?.addEventListener("blur", (e) => {
 
 // Handle Email
 let emailTrue = false;
-userEmail?.addEventListener("blur",() => {
+userEmail?.addEventListener("input",() => {
     if(userEmail.value.match(/^[a-zA-Z0-9\_\.\%\+\-]+\@[a-zA-Z0-9\.\-]+\.[a-z]{2,7}$/)){
         emailTrue = true;
     }else{
@@ -82,7 +82,7 @@ userEmail?.addEventListener("blur",() => {
 
 // Handle Phone Number
 let numberTrue = false;
-userNum?.addEventListener("blur",() => {
+userNum?.addEventListener("input",() => {
     if(userNum.value.match(/^[0-9]{11}$/)){
         numberTrue = true;
     }else{
@@ -96,9 +96,9 @@ userNum?.addEventListener("blur",() => {
 
 // Handle Job Title
 let jobTrue = false;
-userJob?.addEventListener("blur",() => {
-    if(userJob.value.trim() === "" || userJob.value.length<10){
-        (userJob.nextElementSibling as HTMLElement).textContent = "Please Enter Job Name atleast 10 character";
+userJob?.addEventListener("input",() => {
+    if(userJob.value.trim() === "" || userJob.value.length<8){
+        (userJob.nextElementSibling as HTMLElement).textContent = "Please Enter Job Name atleast 8 character";
         setTimeout(() => {
             (userJob.nextElementSibling as HTMLElement).textContent = "";
           }, 3000);
@@ -110,7 +110,7 @@ userJob?.addEventListener("blur",() => {
 
 // Handle Skill
 let skillTrue = false;
-userSkill?.addEventListener("blur",() => {
+userSkill?.addEventListener("input",() => {
     if(userSkill.value.trim() === "" || userSkill.value.length<3){
         (userSkill.nextElementSibling as HTMLElement).textContent = "Please Enter a skill atleast ";
         setTimeout(() => {
@@ -124,7 +124,7 @@ userSkill?.addEventListener("blur",() => {
 
 // Handle School Name
 let schoolNameTrue = false;
-schoolName?.addEventListener("blur",() => {
+schoolName?.addEventListener("input",() => {
     if(schoolName.value.trim() === "" || schoolName.value.length<9){
         (schoolName.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 9 character";
         setTimeout(() => {
@@ -138,7 +138,7 @@ schoolName?.addEventListener("blur",() => {
 
 // Handle School Period
 let schoolPeriodTrue = false;
-schoolPeriod?.addEventListener("blur",() => {
+schoolPeriod?.addEventListener("input",() => {
     if(schoolPeriod.value.trim() === "" || schoolPeriod.value.length<9){
         (schoolPeriod.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 9 character";
         setTimeout(() => {
@@ -152,7 +152,7 @@ schoolPeriod?.addEventListener("blur",() => {
 
 // Handle College Name
 let collegeNameTrue = false;
-collegeName?.addEventListener("blur",() => {
+collegeName?.addEventListener("input",() => {
     if(collegeName.value.trim() === "" || collegeName.value.length<9){
         (collegeName.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 9 character";
         setTimeout(() => {
@@ -166,7 +166,7 @@ collegeName?.addEventListener("blur",() => {
 
 // Handle College Period
 let collegePeriodTrue = false;
-collegePeriod?.addEventListener("blur",() => {
+collegePeriod?.addEventListener("input",() => {
     if(collegePeriod.value.trim() === "" || collegePeriod.value.length<9){
         (collegePeriod.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 9 character";
         setTimeout(() => {
@@ -180,7 +180,7 @@ collegePeriod?.addEventListener("blur",() => {
 
 // Handle University Name
 let universityNameTrue = false;
-universityName?.addEventListener("blur",() => {
+universityName?.addEventListener("input",() => {
     if(universityName.value.trim() === "" || universityName.value.length<9){
         (universityName.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 9 character";
         setTimeout(() => {
@@ -194,7 +194,7 @@ universityName?.addEventListener("blur",() => {
 
 // Handle University Subject
 let universitySubTrue = false;
-universitySub?.addEventListener("blur",() => {
+universitySub?.addEventListener("input",() => {
     if(universitySub.value.trim() === "" || universitySub.value.length<10){
         (universitySub.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 10 character";
         setTimeout(() => {
@@ -208,7 +208,7 @@ universitySub?.addEventListener("blur",() => {
 
 // Handle College Period
 let universityPeriodTrue = false;
-universityPeriod?.addEventListener("blur",() => {
+universityPeriod?.addEventListener("input",() => {
     if(universityPeriod.value.trim() === "" || universityPeriod.value.length<9){
         (universityPeriod.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 9 character";
         setTimeout(() => {
@@ -222,8 +222,8 @@ universityPeriod?.addEventListener("blur",() => {
 
 //Handle Address
 let addressTrue = false;
-userAddress?.addEventListener("blur",() => {
-    if(userAddress.value.trim() === "" || userAddress.value.length < 10){
+userAddress?.addEventListener("input",() => {
+    if(userAddress.value.trim() === "" || userAddress.value.length < 9){
         (userAddress.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 9 character";
         setTimeout(() => {
             (userAddress.nextElementSibling as HTMLElement).textContent = "";
@@ -236,7 +236,7 @@ userAddress?.addEventListener("blur",() => {
 
 // Handle Last Job
 let lastJobTrue = false;
-lastJob?.addEventListener("blur",() => {
+lastJob?.addEventListener("input",() => {
     if(lastJob.value.trim() === "" || lastJob.value.length < 10){
         (lastJob.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 10 character";
         setTimeout(() => {
@@ -250,7 +250,7 @@ lastJob?.addEventListener("blur",() => {
 
 // Handle Last Company
 let lastCompanyTrue = false;
-lastCompany?.addEventListener("blur",() => {
+lastCompany?.addEventListener("input",() => {
     if(lastCompany.value.trim() === "" || lastCompany.value.length < 10){
         (lastCompany.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 10 character";
         setTimeout(() => {
@@ -263,7 +263,7 @@ lastCompany?.addEventListener("blur",() => {
 });
 // Handle Last Company Period
 let lastCompanyPeriodTrue = false;
-periodCompany?.addEventListener("blur",() => {
+periodCompany?.addEventListener("input",() => {
     if(periodCompany.value.trim() === "" || periodCompany.value.length < 9){
         (periodCompany.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 9 character";
         setTimeout(() => {
@@ -277,7 +277,7 @@ periodCompany?.addEventListener("blur",() => {
 
 // Handle Last Company Period
 let lastCompanyWorkTrue = false;
-workExperience?.addEventListener("blur",() => {
+workExperience?.addEventListener("input",() => {
     if(workExperience.value.trim() === "" || workExperience.value.length < 20){
         (workExperience.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 20 character";
         setTimeout(() => {
@@ -291,7 +291,7 @@ workExperience?.addEventListener("blur",() => {
 
 // Handle User Language
 let userLanguageTrue = false;
-userLanguage?.addEventListener("blur",() => {
+userLanguage?.addEventListener("input",() => {
     if(userLanguage.value.trim() === "" || userLanguage.value.length < 4){
         (userLanguage.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 4 character";
         setTimeout(() => {
@@ -304,7 +304,7 @@ userLanguage?.addEventListener("blur",() => {
 });
 // Handle Last Company Period
 let profileTrue = false;
-userProfile?.addEventListener("blur",() => {
+userProfile?.addEventListener("input",() => {
     if(userProfile.value.trim() === "" || userProfile.value.length < 20){
         (userProfile.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 20 character";
         setTimeout(() => {
@@ -319,7 +319,7 @@ userProfile?.addEventListener("blur",() => {
 // Handle User Portfolio
 let portfolioTrue = false;
 let portfolioRegex = /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*\/?$/;
-userPortfolio?.addEventListener("blur",() => {
+userPortfolio?.addEventListener("input",() => {
     if(userPortfolio.value.match(portfolioRegex)){
         portfolioTrue = true;
     }else{
@@ -333,7 +333,7 @@ userPortfolio?.addEventListener("blur",() => {
 
 // Hnadle User Picture
 let pictureTrue = false;
-userPicture?.addEventListener("blur",() => {
+userPicture?.addEventListener("input",() => {
     let files:FileList | null = userPicture.files;
     if(files && files.length>0){
         let fileData = files[0].name;

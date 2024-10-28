@@ -1,5 +1,4 @@
 import type { Resume } from "./type.js";
-// import { userAddress,userEmail,userJob,userLanguage,userName,userNum,userPicture,userPortfolio,userProfile,schoolName ,schoolPeriod,collegeName,collegePeriod,universityName,universityPeriod,universitySub,lastCompany,lastJob,periodCompany,workExperience,userSkill} from "./app.js";
 let resumeParent = document.getElementById("resume-parent") as HTMLElement;
 //Download Resume Button
 let downloadResumeBtn = document.querySelector(".downladPdf") as HTMLElement;
