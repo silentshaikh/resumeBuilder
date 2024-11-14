@@ -1,0 +1,623 @@
+@media only screen and (max-width:930px) {
+    .resume{
+        /* width: 95vw; */
+        width: 860px;
+    }
+    .resume-body{
+        /* padding: 0 20px; */
+    }
+}
+@media only screen and (max-width:880px) {
+    .resume{
+        width: 800px;
+    }
+    .resume-body p{
+        font-size: 13px;
+    }
+    .education-img p{
+        font-size: 9px;
+    }
+    .work-img p{
+        font-size: 9px;
+    }
+    .profile{
+        padding-left: 20px;
+    }
+    .education{
+        padding-left: 20px;
+    }
+    .experience{
+        padding-left: 20px;
+    }
+    .language{
+        padding-left: 20px;
+    }
+    .profile p{
+        width: 400px;
+    }
+    
+}
+@media only screen and (max-width:800px) {
+    .resume{
+        width: 750px;
+    }
+}
+@media only screen and (max-width:760px) {
+    .resume{
+        width: 700px;
+    }
+    .profile p{
+        width: 350px;
+    }   
+}
+@media only screen and (max-width:710px) {
+    .resume{
+        width: 650px;
+    }
+    .resume-head h1{
+        font-size: 40px;
+    }
+    .resume-head h2{
+        font-size: 30px;
+    }
+    .resume-body p{
+        font-size: 13px;
+    }
+    .resume-body p{
+        font-size: 13px;
+    }
+    .education-img p{
+        font-size: 9px;
+    }
+    .work-img p{
+        font-size: 9px;
+    }
+    .resume-body h3{
+        font-size: 25px;
+    }
+    .profile{
+        padding-left: 5px;
+    }
+    .education{
+        padding-left: 5px;
+    }
+    .experience{
+        padding-left: 5px;
+    }
+    .language{
+        padding-left: 5px;
+    }
+    .profile p{
+        width: 320px;
+    }
+    .work-box{
+        gap: 20px;
+    }   
+    .education-box{
+        gap: 20px;
+    }
+    .skill-list li{
+        font-size: 12px;
+    }
+    .language-list li{
+        font-size: 12px;
+    }
+
+}
+@media only screen and (max-width:660px) {
+    .resume{
+        width: 600px;
+    }
+    .resume-head{
+        gap: 100px;
+    }
+    .resume-head h1{
+        font-size: 40px;
+    }
+    .resume-head h2{
+        font-size: 30px;
+    }
+    .resume-body p{
+        font-size: 12px;
+    }
+    .education-img p{
+        font-size: 9px;
+    }
+    .work-img p{
+        font-size: 9px;
+    }
+    .resume-body h3{
+        font-size: 22px;
+    }
+    .resume-body h4{
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .profile{
+        padding-left: 0px;
+    }
+    .education{
+        padding-left: 0px;
+    }
+    .experience{
+        padding-left: 0px;
+    }
+    .language{
+        padding-left: 0px;
+        /* font-size: 14px; */
+    }
+
+    .profile p{
+        width: 280px;
+    }
+    .work-box{
+        gap: 20px;
+    }   
+    .education-box{
+        gap: 20px;
+    }
+    .skill-list li{
+        font-size: 11px;
+    }
+    .language-list li{
+        font-size: 11px;
+    }
+}
+@media only screen and (max-width:620px) {
+    .resume{
+        width: 550px;
+    }
+    .resume-head{
+        gap: 80px;
+        padding: 10px 20px;
+    }
+    .profile-img img{
+        height: 110px;
+        width: 110px;
+    }
+    .resume-head h1{
+        font-size: 30px;
+    }
+    .resume-head h2{
+        font-size: 23px;
+    }
+    .resume-body p{
+        font-size: 12px;
+    }
+    
+    .resume-body h3{
+        font-size: 20px;
+    }
+    .resume-body h4{
+        font-size: 13px;
+        font-weight: 500;
+    }
+    .profile p{
+        width: 240px;
+    }
+    .work-box{
+        gap: 20px;
+    }   
+    .education-box{
+        gap: 20px;
+    }
+    .work-box p{
+        font-size: 10px;
+    }
+    .education-box p{
+        font-size: 10px;
+    }
+    .education-img p{
+        font-size: 7px;
+        left: 7px;
+        bottom: 11px;
+    }
+    .work-img p{
+        font-size: 7px;
+        left: 7px;
+        bottom: 11px;
+    }
+    .resume-left{
+        width: 250px;
+    }
+    .personal{
+        width: 200px;
+    }
+    .contact{
+        width: 200px;
+    }
+    .skills{
+        width: 200px;
+    }
+    .education-img img{
+        width: 50px;
+    }
+    .work-img img{
+        width: 50px;
+    }
+   
+}
+@media only screen and (max-width:540px) {
+    .resume{
+        width: 500px;
+    }  
+    .skill-list li{
+        font-size: 10px;
+    }
+    .language-list li{
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width:500px) {
+    .resume{
+        width: 450px;
+    }
+    .resume-head{
+        gap: 70px;
+        padding: 10px 20px;
+    }
+    .profile-img img{
+        height: 110px;
+        width: 110px;
+    }
+    .resume-head h1{
+        font-size: 30px;
+    }
+    .resume-head h2{
+        font-size: 23px;
+    }
+    .resume-body p{
+        font-size: 10px;
+    }
+    .resume-body h3{
+        font-size: 20px;
+    }
+    .resume-body h4{
+        font-size: 13px;
+        font-weight: 500;
+    }
+    .profile p{
+        width: 230px;
+    }
+    .work-box{
+        gap: 20px;
+    }   
+    .education-box{
+        gap: 20px;
+    }
+    .work-box p{
+        font-size: 10px;
+    }
+    .education-box p{
+        font-size: 10px;
+    }
+    .resume-left{
+        width: 200px;
+    }
+    .personal{
+        width: 170px;
+    }
+    .contact{
+        width: 170px;
+    }
+    .contact p{
+        font-size: 10px;
+    }
+    .skills{
+        width: 170px;
+    }
+    .education-img img{
+        width: 50px;
+    }
+    .work-img img{
+        width: 50px;
+    }
+    .education-img p{
+        font-size: 7px;
+        left: 7px;
+        bottom: 11px;
+    }
+    .work-img p{
+        font-size: 7px;
+        left: 7px;
+        bottom: 11px;
+    }
+   
+}
+@media only screen and (max-width:470px) {
+    .resume{
+        width: 430px;
+    }
+    .resume-head{
+        gap:50px;
+        padding: 10px 20px;
+    }
+    .profile-img img{
+        height: 110px;
+        width: 110px;
+    }
+    .resume-head h1{
+        font-size: 30px;
+    }
+    .resume-head h2{
+        font-size: 23px;
+    }
+    .resume-body h3{
+        font-size: 20px;
+    }
+    .resume-body h4{
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .profile p{
+        width: 200px;
+    }
+    .work-box{
+        gap: 10px;
+    }   
+    .education-box{
+        gap: 10px;
+    }
+
+   
+}
+@media only screen and (max-width:440px) {
+    .resume{
+        width: 400px;
+    }
+    .resume-head{
+        gap: 50px;
+        padding: 10px 20px;
+    }
+    .profile-img img{
+        height: 100px;
+        width: 100px;
+    }
+    .resume-head h1{
+        font-size: 25px;
+    }
+    .resume-head h2{
+        font-size: 20px;
+    }
+    .resume-body p{
+        font-size: 10px;
+    }
+    .resume-body h3{
+        font-size: 20px;
+    }
+    .resume-body h4{
+        font-size: 10px;
+        font-weight: 500;
+    }
+    .profile p{
+        width: 180px;
+    }
+    .work-box{
+        gap: 10px;
+    }   
+    .education-box{
+        gap: 10px;
+    }
+    .work-box p{
+        font-size: 8px;
+        font-weight: 500;
+    }
+    .education-box p{
+        font-size: 8px;
+        font-weight: 500;
+    }
+    .resume-left{
+        width: 180px;
+        padding-top: 0;
+    }
+    .pers-box{
+        padding-top: 0;
+    }
+    .personal{
+        width: 150px;
+    }
+    .contact{
+        width: 160px;
+    }
+    .contact p{
+        font-size: 10px;
+    }
+    .skills{
+        width: 150px;
+    }
+    .education-img img{
+        width: 50px;
+    }
+    .work-img img{
+        width: 50px;
+    }
+    .skill-list li{
+        font-size: 9px;
+    }
+    .language-list li{
+        font-size: 9px;
+    }
+    .education-img p{
+        font-size: 7px;
+        left: 7px;
+        bottom: 11px;
+    }
+    .work-img p{
+        font-size: 7px;
+        left: 7px;
+        bottom: 11px;
+    }
+   
+}
+@media only screen and (max-width:410px) {
+    .resume{
+        width: 500px;
+    }
+    .resume-head{
+        gap: 50px;
+        padding: 10px 20px;
+    }
+    .profile-img img{
+        height: 100px;
+        width: 100px;
+    }
+    .resume-head h1{
+        font-size: 25px;
+    }
+    .resume-head h2{
+        font-size: 20px;
+    }
+    .resume-body p{
+        font-size: 8px;
+    }
+    .resume-body h3{
+        font-size: 20px;
+    }
+    .resume-body h4{
+        font-size: 10px;
+        font-weight: 500;
+    }
+    .profile p{
+        width: 150px;
+    }
+    .work-box{
+        gap: 10px;
+    }   
+    .education-box{
+        gap: 10px;
+    }
+    .work-box p{
+        font-size: 8px;
+        font-weight: 500;
+    }
+    .education-box p{
+        font-size: 8px;
+        font-weight: 500;
+    }
+    .resume-left{
+        width: 180px;
+        padding-top: 0;
+    }
+    .personal{
+        width: 150px;
+    }
+    .contact{
+        width: 160px;
+    }
+    .contact p{
+        font-size: 10px;
+    }
+    .skills{
+        width: 150px;
+    }
+    .education-img img{
+        width: 45px;
+    }
+    .work-img img{
+        width: 45px;
+    }
+    .skill-list li{
+        font-size: 8px;
+    }
+    .language-list li{
+        font-size: 8px;
+    }
+    .education-img p{
+        font-size: 6px;
+        left: 7px;
+        bottom: 11px;
+    }
+    .work-img p{
+        font-size: 6px;
+        left: 7px;
+        bottom: 11px;
+    }
+   
+}
+@media only screen and (max-width:375px) {
+    .resume{
+        width: 500px;
+    }
+    .resume-head{
+        gap: 50px;
+        padding: 10px 20px;
+    }
+    .profile-img img{
+        height: 100px;
+        width: 100px;
+    }
+    .resume-head h1{
+        font-size: 22px;
+    }
+    .resume-head h2{
+        font-size: 18px;
+    }
+    .resume-body p{
+        font-size: 8px;
+    }
+    .resume-body h3{
+        font-size: 16px;
+    }
+    .resume-body h4{
+        font-size: 8px;
+        font-weight: 500;
+    }
+    .profile p{
+        width: 150px;
+    }
+    .work-box{
+        gap: 10px;
+    }   
+    .education-box{
+        gap: 10px;
+    }
+    .work-box p{
+        font-size: 6px;
+        font-weight: 500;
+    }
+    .education-box p{
+        font-size: 6px;
+        font-weight: 500;
+    }
+    .resume-left{
+        width: 150px;
+        padding-top: 0;
+    }
+    .personal{
+        width: 130px;
+    }
+    .contact{
+        width: 130px;
+    }
+    .contct-box{
+        font-size: 8px;
+    }
+    .skills{
+        width: 130px;
+    }
+    .education-img img{
+        width: 40px;
+    }
+    .work-img img{
+        width: 40px;
+    }
+    .education-img p{
+        font-size: 5.5px;
+        left: 5px;
+        bottom: 11px;
+    }
+    .work-img p{
+        font-size: 5.5px;
+        left: 5px;
+        bottom: 11px;
+    }
+   
+}
+@media only screen and (max-width:345px){
+    .resume{
+        overflow: auto;
+    }
+    .resume-head{
+        width: 350px;
+    }
+}

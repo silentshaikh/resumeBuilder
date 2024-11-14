@@ -5,7 +5,6 @@ export interface Resume{
     img:string;
     number:string;
     email:string;
-    work:string;
     lastJob:string;
     lastCompany:string;
     periodCompany:string;
@@ -20,4 +19,8 @@ export interface Resume{
     universitySub:string;
     portfolio:string;
     address:string;
+    collegeSub:string;
+    schoolSub:string;
+    nationality:string;
+    birthDate:Date | null;
 }

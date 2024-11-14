@@ -12,21 +12,31 @@ let universitySub = document.getElementById("universitysub");
 let universityPeriod = document.getElementById("universityperiod");
 let lastCompany = document.getElementById("company");
 let periodCompany = document.getElementById("period");
-let workExperience = document.getElementById("work-experience");
+//   let workExperience = document.getElementById("work-experience") as HTMLTextAreaElement;
 let userSkill = document.getElementById("skill");
 let userLanguage = document.getElementById("language");
 let userAddress = document.getElementById("address");
 let userPortfolio = document.getElementById("portfolio");
 let userPicture = document.getElementById("picture");
 let userProfile = document.getElementById("profile");
+let birthDate = document.getElementById('birth-date');
+let nationality = document.getElementById('nationality');
+let collegeSub = document.getElementById('college-sub');
+let schoolSub = document.getElementById('school-sub');
 // HTML Form
-let resumeForm = document.querySelector("#form-edit-resume");
+let resumeForm = document.querySelector("#edit-form");
+//Form Error
+let formError = document.querySelector('.error');
+let errorBtn = document.querySelector('.error button');
+//Form Submit Successfully
+let formSuccess = document.querySelector('.success');
+let successBtn = document.querySelector('.success button');
 //Handle Name
 let userTrue = true;
 userName?.addEventListener("input", (e) => {
-    if (userName.value.trim() === "" || userName.value.length < 8) {
+    if (userName.value.trim() === "" || userName.value.length < 3) {
         // console.log(userName.nextElementSibling);
-        userName.nextElementSibling.textContent = "Please Enter a username atleast 8 character";
+        userName.nextElementSibling.textContent = "Please Enter a username atleast 3 character";
         setTimeout(() => {
             userName.nextElementSibling.textContent = "";
         }, 3000);
@@ -195,7 +205,7 @@ universityPeriod?.addEventListener("input", () => {
 //Handle Address
 let addressTrue = true;
 userAddress?.addEventListener("input", () => {
-    if (userAddress.value.trim() === "" || userAddress.value.length < 9) {
+    if (userAddress.value.trim() === "" || userAddress.value.length < 10) {
         userAddress.nextElementSibling.textContent = "Please Enter atleast 9 character";
         setTimeout(() => {
             userAddress.nextElementSibling.textContent = "";
@@ -249,19 +259,18 @@ periodCompany?.addEventListener("input", () => {
     }
 });
 // Handle Last Company Period
-let lastCompanyWorkTrue = true;
-workExperience?.addEventListener("input", () => {
-    if (workExperience.value.trim() === "" || workExperience.value.length < 20) {
-        workExperience.nextElementSibling.textContent = "Please Enter atleast 20 character";
-        setTimeout(() => {
-            workExperience.nextElementSibling.textContent = "";
-        }, 3000);
-        lastCompanyWorkTrue = false;
-    }
-    else {
-        lastCompanyWorkTrue = true;
-    }
-});
+// let lastCompanyWorkTrue = true;
+// workExperience?.addEventListener("input",() => {
+//    if(workExperience.value.trim() === "" || workExperience.value.length < 20){
+//        (workExperience.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 20 character";
+//        setTimeout(() => {
+//            (workExperience.nextElementSibling as HTMLElement).textContent = "";
+//          }, 3000);
+//        lastCompanyWorkTrue = false;
+//    }else{
+//        lastCompanyWorkTrue = true;
+//    }
+// });
 // Handle User Language
 let userLanguageTrue = true;
 userLanguage?.addEventListener("input", () => {
@@ -288,6 +297,62 @@ userProfile?.addEventListener("input", () => {
     }
     else {
         profileTrue = true;
+    }
+});
+// Handle College Subject
+let collegeSubTrue = true;
+collegeSub?.addEventListener("input", () => {
+    if (collegeSub.value.trim() === "" || collegeSub.value.length < 4) {
+        collegeSub.nextElementSibling.textContent = "Please Enter atleast 4 character";
+        setTimeout(() => {
+            collegeSub.nextElementSibling.textContent = "";
+        }, 3000);
+        collegeSubTrue = false;
+    }
+    else {
+        collegeSubTrue = true;
+    }
+});
+// Handle School Subject
+let schoolSubTrue = true;
+schoolSub?.addEventListener("input", () => {
+    if (schoolSub.value.trim() === "" || schoolSub.value.length < 4) {
+        schoolSub.nextElementSibling.textContent = "Please Enter atleast 4 character";
+        setTimeout(() => {
+            schoolSub.nextElementSibling.textContent = "";
+        }, 3000);
+        schoolSubTrue = false;
+    }
+    else {
+        schoolSubTrue = true;
+    }
+});
+// Handle College Period
+let birthDateTrue = true;
+birthDate?.addEventListener("change", () => {
+    if (birthDate.value.trim() === "" || birthDate.value.length === 0) {
+        birthDate.nextElementSibling.textContent = "Please Enter Birth Date";
+        setTimeout(() => {
+            birthDate.nextElementSibling.textContent = "";
+        }, 3000);
+        birthDateTrue = false;
+    }
+    else {
+        birthDateTrue = true;
+    }
+});
+// Handle Nationality
+let nationalityTrue = true;
+nationality?.addEventListener("input", () => {
+    if (nationality.value.trim() === "" || nationality.value.length < 4) {
+        nationality.nextElementSibling.textContent = "Please Enter atleast 4 character";
+        setTimeout(() => {
+            nationality.nextElementSibling.textContent = "";
+        }, 3000);
+        nationalityTrue = false;
+    }
+    else {
+        nationalityTrue = true;
     }
 });
 // Handle User Portfolio
@@ -346,14 +411,14 @@ const handleImg = () => {
 // Handle Form For Edit Resume
 // Object for resume data
 //Get CV Container for show and hide
-let cvContainer = document.getElementById("cv-container");
+let cvContainer = document.querySelector(".resume-container");
 //Get Edit CV Container for show and hide 
-let updateCv = document.getElementById("edit-resume-form");
+let updateCv = document.querySelector(".edit-sec");
 resumeForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
     let resumeData = localStorage.getItem('Resume-Data');
     let resumeObj = JSON.parse(resumeData);
-    if (userTrue && emailTrue && numberTrue && jobTrue && lastJobTrue && lastCompanyTrue && lastCompanyPeriodTrue && lastCompanyWorkTrue && addressTrue && portfolioTrue && pictureTrue && profileTrue && userLanguageTrue && skillTrue && schoolNameTrue && schoolPeriodTrue && collegeNameTrue && collegePeriodTrue && universityNameTrue && universityPeriodTrue && universitySubTrue) {
+    if (userTrue && emailTrue && numberTrue && jobTrue && lastJobTrue && lastCompanyTrue && lastCompanyPeriodTrue && birthDateTrue && schoolSubTrue && nationalityTrue && collegeSubTrue && addressTrue && portfolioTrue && pictureTrue && profileTrue && userLanguageTrue && skillTrue && schoolNameTrue && schoolPeriodTrue && collegeNameTrue && collegePeriodTrue && universityNameTrue && universityPeriodTrue && universitySubTrue) {
         try {
             let baseEdit64Img = await handleImg();
             let resumeObjEdit = {
@@ -370,7 +435,7 @@ resumeForm?.addEventListener("submit", async (e) => {
                 universityPeriod: universityPeriod.value,
                 lastCompany: lastCompany.value,
                 lastJob: lastJob.value,
-                work: workExperience.value,
+                // work: workExperience.value,
                 address: userAddress.value,
                 portfolio: userPortfolio.value,
                 profile: userProfile.value,
@@ -378,25 +443,38 @@ resumeForm?.addEventListener("submit", async (e) => {
                 skill: userSkill.value.split(" "),
                 img: baseEdit64Img,
                 periodCompany: periodCompany.value,
+                birthDate: birthDate.valueAsDate,
+                collegeSub: collegeSub.value,
+                schoolSub: schoolSub.value,
+                nationality: nationality.value
             };
             console.log(resumeObjEdit);
             localStorage.setItem("Resume-Data", JSON.stringify(resumeObjEdit));
-            alert("Congratulations, Your form has been Edit Successfully.");
-            cvContainer.classList.remove("hide");
-            updateCv.classList.add("hide");
+            // form edit success
+            formSuccess.classList.add('show');
+            formSuccess.classList.remove('hide');
+            successBtn.addEventListener('click', () => {
+                formSuccess.classList.add('hide');
+                formSuccess.classList.remove('show');
+                cvContainer.classList.remove("hide-content");
+                updateCv.classList.add("hide-content");
+            });
             setTimeout(() => {
                 window.location.reload();
-            }, 1000);
+            }, 4000);
         }
         catch (error) {
             console.log(error);
         }
-        // updateJsonData();
-        // window.location.href = './component/resume.html';
-        // emptyInput();
     }
     else {
-        alert("Sorry, Your Form has not been Submit.");
+        // alert("Sorry, Your Form has not been Submit.")
+        formError.classList.add('show');
+        formError.classList.remove('hide');
+        errorBtn.addEventListener('click', () => {
+            formError.classList.add('hide');
+            formError.classList.remove('show');
+        });
     }
 });
 //  Set Input Value from Local Storage
@@ -416,26 +494,37 @@ const editCv = () => {
     universityPeriod.value = convObj.universityPeriod;
     lastCompany.value = convObj.lastCompany;
     periodCompany.value = convObj.periodCompany;
-    workExperience.value = convObj.work;
     userAddress.value = convObj.address;
     userPortfolio.value = convObj.portfolio;
     userProfile.value = convObj.profile;
     userLanguage.value = convObj.language.join(" ");
     userSkill.value = convObj.skill.join(" ");
     lastJob.value = convObj.lastJob;
-    userPicture.src = convObj.img;
+    nationality.value = convObj.nationality;
+    schoolSub.value = convObj.schoolSub;
+    collegeSub.value = convObj.collegeSub;
+    // Parse birthDate into a Date object and assign it
+    if (convObj.birthDate) {
+        const birthDateValue = new Date(convObj.birthDate); // Convert string to Date
+        birthDate.valueAsDate = birthDateValue; // Assign Date object to input
+    }
+    else {
+        birthDate.value = ""; // Clear the input if no date is available
+    }
+    userPicture.value = convObj.img;
     console.log(userPicture.value);
 };
 // For Edit the Resume
-let editBtn = document.querySelector(".editbtn");
+let editBtn = document.querySelector(".edit-btn");
 editBtn.addEventListener("click", () => {
     // console.log(editBtn);
-    cvContainer.classList.add("hide");
-    updateCv.classList.remove("hide");
+    cvContainer.classList.add("hide-content");
+    updateCv.classList.remove("hide-content");
     editCv();
 });
-let downloadResumeBtnDisbl = document.querySelector(".downladPdf");
-let generateResumeUrl = document.querySelector(".generate-url");
+// share the Resume
+let downloadResumeBtnDisbl = document.querySelector(".download-btn");
+let generateResumeUrl = document.querySelector(".share-resume-btn");
 //remove button when we shared the link
 const btnIsDisabled = () => {
     editBtn.style.display = 'none';

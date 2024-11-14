@@ -6,17 +6,30 @@
     <title>Resume</title>
     <link rel="stylesheet" href="../styles/resume.css">
     <link rel="stylesheet" href="../styles/editform.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Anton+SC&family=Cherry+Bomb+One&family=New+Amsterdam&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
 </head>
 <body>
+    <header class="header">
+        <img src="../images/human-resources-search-isolated_24877-44461-fotor-bg-remover-2024111314738.png" alt="logo">
+        <h1>RESUME BUILDER</h1>
+       </header> 
     <main>
-        <!-- Form for Edit Resumme -->
-        <div class="update-cv hide" id="edit-resume-form">
-            <h1>Edit Resume</h1>
-            <form action="" class="resume-form" id="form-edit-resume">
+        <!-- edit form -->
+         <section class="edit-sec hide-content">
+            <div class="error hide">
+                <p>All fields are required. Please complete the form before submitting</p>
+                <button>Okay</button>
+            </div>
+            <div class="success hide">
+                <p>Your resume has been successfully created!</p>
+                <button>Let's Check</button>
+            </div>
+            <h3 class="edit-head">EDIT YOUR RESUME</h3>
+            <form action="" class="resume-form" id="edit-form">
                 <div class="form-row-1">
                    <div class="form-1">
                     <label for="">Full Name:</label>
@@ -68,7 +81,11 @@
                          <p></p>
                          <input type="text" name="" id="period" placeholder="Enter Your Employment Period">
                          <p></p>
-                         <textarea name="" id="work-experience" rows="6" placeholder="Enter Your Work Experience"></textarea>
+                         <input type="text" name="" id="nationality" placeholder="Enter Your Nationality">
+                         <p></p>
+                         <input type="text" name="" id="school-sub" placeholder="Enter Your School Subject">
+                         <p></p>
+                         <input type="text" name="" id="college-sub" placeholder="Enter Your College Subject">
                          <p></p>
                      </div>
                  </div>
@@ -100,37 +117,170 @@
                             <input type="file" name="" id="picture" accept=".jpg,.jpeg,.webp,.png">
                             <p></p>
                         </div>
+                        <div class="form-1">
+                            <label for="">Your Birth Date:</label>
+                            <input type="date" name="" id="birth-date" placeholder="Enter Your Birth Date">
+                         <p></p>
+                        </div>
                       </div>
                            <div class="form-1">
                             <label for="">Your Profile:</label>
-                               <textarea name="" id="profile" rows="6" placeholder="Enter Your Profile"></textarea>
+                               <textarea name="" id="profile" rows="13" placeholder="Enter Your Profile"></textarea>
                                <p></p>
                            </div>
                        </div>
 
-                       <button class="resume-btn">Edit Resume</button>
+                       <button class="resume-btn">Let's Edit</button>
                  
               
             </form>
-        </div> 
-        <section class="cv" id="cv-container">
-            <!-- Button For Edit and Download -->
-            <div class="edit-download">
-                <button class="editbtn">Edit CV</button>
-                <button class="downladPdf">Download CV</button>
-                <button class="generate-url">Generate URl</button>
+        </section>
+        <section class="resume-container">
+            <section class="btn-sec">
+                <button class="edit-btn">Edit</button>
+                <button class="download-btn">Download Resume</button>
+                <button class="share-resume-btn">Generate Url</button>
+            </section>
+        <section class="resume-section">
+           
+            <!-- <section class="resume">
+            <div class="resume-head">
+                <div class="profile-img">
+                    <img src="../images/download.jpg" alt="">
+                </div>
+                <div class="name-jobtitle">
+                    <h1>Shaikh Abdul Moiz</h1>
+                    <h2>Front - End - Developer</h2>
+                </div>
             </div>
-            <!-- Our Resume -->
-        <section id="resume-parent" >
-             
+            <div class="resume-body">
+                <div class="resume-left">
+                    <div class="personal">
+                        <h3>PERSONAL</h3>
+                        <div class="pers-info">
+
+                            <div class="pers-box">
+                                <h4>Name</h4>
+                                <p>Shaikh Abdul Moiz</p>
+                            </div>
+                            <div class="pers-box">
+                                <h4>Birthday</h4>
+                                <p>4 <sup>th</sup> December 2004</p>
+                            </div>
+                            <div class="pers-box">
+                                <h4>Nationality</h4>
+                                <p>Pakistani</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact">
+                        <h3>CONTACT</h3>
+                        <div class="contct-info">
+
+                            <div class="contct-box">
+                                <h4>Email</h4>
+                                <p>sheikhabdulmoiz283@gmail.com</p>
+                            </div>
+                            <div class="contct-box">
+                                <h4>Number</h4>
+                                <p>03345234443</p>
+                            </div>
+                            <div class="contct-box">
+                                <h4>Address</h4>
+                                <p>Karachi Pakistan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills">
+                        <h3>SKILLS</h3>
+                        <ul class="skill-list">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JAVASCRIPT</li>
+                            <li>TYPESCRIPT</li>
+                            <li>TAILWIND CSS</li>
+                            <li>NEXT JS</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="resume-right">
+                    <div class="profile">
+                        <h3>PROFILE</h3>
+                        <p>I am a Product Designer and Frontend Developer, I fully understand the process of design and development of a digital product, my job is to make a product usable and visually appealing, through the Design Thinking methodology I manage to create products that are endearing to users.
+                        </p>
+                    </div>
+                    <div class="experience">
+                        <h3>EXPERIENCE</h3>
+                       <div class="work-list">
+                        <div class="work-box">
+                            <div class="work-img">
+                                <img src="../images/Vector (2).png" alt="">
+                                <p>2024</p>
+                            </div>
+                            <div class="company-job">
+                                <h4>FRONT END DEVELOPER</h4>
+                                <p>GOOGLE USa</p>
+                            </div>
+                        </div>
+                       </div>
+                    </div>
+                    <div class="education">
+                        <h3>EDUCATION</h3>
+                       <div class="education-list">
+                        <div class="education-box">
+                            <div class="education-img">
+                                <img src="../images/Vector (2).png" alt="">
+                                <p>2021</p>
+                            </div>
+                            <div class="school-college">
+                                <h4>COMPUTER SCIENce</h4>
+                                <p>CMS GOVT HIGHER SECONDARY CAMPUS SCHOOL</p>
+                            </div>
+                        </div>
+                        <div class="education-box">
+                            <div class="education-img">
+                                <img src="../images/Vector (2).png" alt="">
+                                <p>2024</p>
+                            </div>
+                            <div class="school-college">
+                                <h4>COMPUTER SCIENCE</h4>
+                                <p>S M GOVT SCIENCE COLLEGE</p>
+                            </div>
+                        </div>
+                        <div class="education-box">
+                            <div class="education-img">
+                                <img src="../images/Vector (2).png" alt="">
+                                <p>2028</p>
+                            </div>
+                            <div class="school-college">
+                                <h4>BSC IN COMPUTER SCIENCE</h4>
+                                <p>HARVARD UNIVERSITY</p>
+                            </div>
+                        </div>
+                       </div>
+                    </div>
+                    <div class="language">
+                        <h3>LANGUAGE</h3>
+                        <ul class="language-list">
+                            <li>ENGLISH</li>
+                            <li>URDU</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            </section> -->
+
         </section>
-        </section>
+    </section>
     </main>
-    <!-- JS Link -->
+    <footer class="footer">
+        <p>&copy; Copyright - <strong>Resume Builder</strong> - All Right Reserved</p>
+       </footer>
     <script type="module" src="../dist/resume.js"></script>
     <script type="module" src="../dist/editCv.js"></script>
-
-    <!-- html2pdf Link -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+     <!-- html2pdf Link -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 </body>
 </html>

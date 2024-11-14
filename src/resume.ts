@@ -1,10 +1,12 @@
 import type { Resume } from "./type.js";
-let resumeParent = document.getElementById("resume-parent") as HTMLElement;
-//Download Resume Button
-let downloadResumeBtn = document.querySelector(".downladPdf") as HTMLElement;
+// import { userAddress,userEmail,userJob,userLanguage,userName,userNum,userPicture,userPortfolio,userProfile,schoolName ,schoolPeriod,collegeName,collegePeriod,universityName,universityPeriod,universitySub,lastCompany,lastJob,periodCompany,workExperience,userSkill} from "./app.js";
+let resumeParent = document.querySelector(".resume-section") as HTMLElement;
 
-//Generate Url For Resume Button
-let generateResumeUrl = document.querySelector(".generate-url") as HTMLElement;
+//Download Resume Button
+let downloadResumeBtn = document.querySelector(".download-btn") as HTMLButtonElement;
+
+// month list
+const monthList:string[] = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"];
 
 //Show the Resume
 (() => {
@@ -13,84 +15,148 @@ let getResumeFromLocl = localStorage.getItem("Resume-Data");
     //convert into an Object
 let strtoObj:Resume = JSON.parse(getResumeFromLocl as string)
     console.log(strtoObj);
+
+     // Convert birthDate from string to Date
+     if (strtoObj.birthDate) {
+        strtoObj.birthDate = new Date(strtoObj.birthDate); // Convert back to Date
+    }
     if(!strtoObj){
         resumeParent.innerHTML = `<section class="data-not-found">
                 <h1>DATA - NOT - AVAILABLE</h1>
             </section>`;
     }else{
-        resumeParent.innerHTML =  `<section class="resume" id="resum">
-                <div class="user-img-name">
-                    <div class="usr-img">
-                        <img src="${strtoObj.img}" alt="resume-image">
-                    </div>
-                    <div class="user-name">
-                        <h1 >${strtoObj.name}</h1>
-                        <h2>${strtoObj.jobTitle}</h2>
-                    </div>
+        resumeParent.innerHTML =  `<section class="resume">
+            <div class="resume-head">
+                <div class="profile-img">
+                    <img src=${strtoObj.img} alt="profile-photo">
                 </div>
-                <div class="contect-about">
+                <div class="name-jobtitle">
+                    <h1>${strtoObj.name}</h1>
+                    <h2>${strtoObj.jobTitle}</h2>
+                </div>
+            </div>
+            <div class="resume-body">
+                <div class="resume-left">
+                    <div class="personal">
+                        <h3>PERSONAL</h3>
+                        <div class="pers-info">
+
+                            <div class="pers-box">
+                                <h4>Name</h4>
+                                <p>${strtoObj.name}</p>
+                            </div>
+                            <div class="pers-box">
+                                <h4>Birthday</h4>
+                               <p>${strtoObj.birthDate
+                                    ? `${strtoObj.birthDate.getDate()} ${monthList[strtoObj.birthDate.getMonth()]} ${strtoObj.birthDate.getFullYear()}`
+                                    : "N/A"}</p>
+                            </div>
+                            <div class="pers-box">
+                                <h4>Nationality</h4>
+                                <p>${strtoObj.nationality}</p>
+                            </div>
+                            <div class="pers-box">
+                                <h4>Portfolio</h4>
+                                <p class="port">${strtoObj.portfolio}</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="contact">
                         <h3>CONTACT</h3>
-                        <div class="cont-info">
-                            <p><i class="fa-solid fa-phone"></i> ${strtoObj.number}</p>
-                            <p><i class="fa-solid fa-envelope"></i> ${strtoObj.email}</p>
-                            <p><i class="fa-brands fa-firefox"></i> ${strtoObj.portfolio}</p>
-                            <p><i class="fa-solid fa-location-pin"></i> ${strtoObj.address}</p>
-                        </div>
-                    </div>
-                    <div class="about">
-                        <h3>ABOUT ME</h3>
-                        <p>${strtoObj.profile}</p>
-                    </div>
-                </div>
-                <div class="education-experience">
-                    <div class="education">
-                        <h3>education</h3>
-                        <div class="educ">
-                            <div class="educ-1">
-                                <h4>${strtoObj.university}</h4>
-                                <h5>${strtoObj.universitySub}</h5>
-                                <h6>${strtoObj.universityPeriod}</h6>
+                        <div class="contct-info">
+
+                            <div class="contct-box">
+                                <h4>Email</h4>
+                                <p>${strtoObj.email}</p>
                             </div>
-                            <div class="educ-1">
-                                <h4>${strtoObj.collegeName}</h4>
-                                <h6>${strtoObj.collegePeriod}</h6>
+                            <div class="contct-box">
+                                <h4>Number</h4>
+                                <p>${strtoObj.number}</p>
                             </div>
-                            <div class="educ-1">
-                                <h4>${strtoObj.schoolName}</h4>
-                                <h6>${strtoObj.schoolPeriod}</h6>
+                            <div class="contct-box">
+                                <h4>Address</h4>
+                                <p>${strtoObj.address}</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="work-experience">
-                        <h3>work experience</h3>
-                        <div class="work">
-                            <h4>${strtoObj.lastJob}</h4>
-                            <p>${strtoObj.work}</p>
-                            <h5>${strtoObj.lastCompany}</h5>
-                            <h6>${strtoObj.periodCompany}</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-language">
-                    <div class="language">
-                        <h3>LANGUAGE</h3>
-                        <ul>
-                            ${strtoObj.language.map(e => `<li>${e}</li>`).join('')}
-                        </ul>
                     </div>
                     <div class="skills">
-                        <h3>SKILL</h3>
-                        <ul>
+                        <h3>SKILLS</h3>
+                        <ul class="skill-list">
                         ${strtoObj.skill.map(e => `<li>${e}</li>`).join('')}
                         </ul>
                     </div>
                 </div>
-            </section> `;
-    }
 
-// get Resume section for download in PDF
-    let resumeGet = document.querySelector("#resum") as HTMLElement;
+                <div class="resume-right">
+                    <div class="profile">
+                        <h3>PROFILE</h3>
+                        <p>${strtoObj.profile}
+                        </p>
+                    </div>
+                    <div class="experience">
+                        <h3>EXPERIENCE</h3>
+                       <div class="work-list">
+                        <div class="work-box">
+                            <div class="work-img">
+                                <img src="../images/Vector (2).png" alt="">
+                                <p>${strtoObj.periodCompany}</p>
+                            </div>
+                            <div class="company-job">
+                                <h4>${strtoObj.lastJob}</h4>
+                                <p>${strtoObj.lastCompany}</p>
+                            </div>
+                        </div>
+                       </div>
+                    </div>
+                    <div class="education">
+                        <h3>EDUCATION</h3>
+                       <div class="education-list">
+                        <div class="education-box">
+                            <div class="education-img">
+                                <img src="../images/Vector (2).png" alt="">
+                                <p>${strtoObj.schoolPeriod}</p>
+                            </div>
+                            <div class="school-college">
+                                <h4>${strtoObj.schoolSub}</h4>
+                                <p>${strtoObj.schoolName}</p>
+                            </div>
+                        </div>
+                        <div class="education-box">
+                            <div class="education-img">
+                                <img src="../images/Vector (2).png" alt="">
+                                <p>${strtoObj.collegePeriod}</p>
+                            </div>
+                            <div class="school-college">
+                                <h4>${strtoObj.collegeSub}</h4>
+                                <p>${strtoObj.collegeName}</p>
+                            </div>
+                        </div>
+                        <div class="education-box">
+                            <div class="education-img">
+                                <img src="../images/Vector (2).png" alt="">
+                                <p>${strtoObj.universityPeriod}</p>
+                            </div>
+                            <div class="school-college">
+                                <h4>${strtoObj.universitySub}</h4>
+                                <p>${strtoObj.university}</p>
+                            </div>
+                        </div>
+                       </div>
+                    </div>
+                    <div class="language">
+                        <h3>LANGUAGE</h3>
+                        <ul class="language-list">
+                        ${strtoObj.language.map(e => `<li>${e}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            </section>`;
+    }
+   
+    // get Resume section for download in PDF
+let resumeGet = document.querySelector(".resume") as HTMLElement;
 
 function downloadPdf() {
         const options = {
@@ -101,7 +167,7 @@ function downloadPdf() {
         jsPDF: { unit: 'mm', format: [297, 320], orientation: 'portrait' } // PDF format options
       };
   
-      if (resumeGet) {
+      if (resumeGet){
         html2pdf().from(resumeGet).set(options).save().then(() => {
           console.log("PDF generated successfully!");
         }).catch((error: any) => {
@@ -113,6 +179,8 @@ function downloadPdf() {
 }
     downloadResumeBtn.addEventListener("click",() => {
         downloadPdf();
+        // alert('helo')
+        // console.log(resumeGet)
     });
-
 })();
+

@@ -13,16 +13,26 @@ import type { Resume } from "./type.js";
    let universityPeriod = document.getElementById("universityperiod") as HTMLInputElement;
    let lastCompany = document.getElementById("company") as HTMLInputElement;
    let periodCompany = document.getElementById("period") as HTMLInputElement;
-   let workExperience = document.getElementById("work-experience") as HTMLTextAreaElement;
    let userSkill = document.getElementById("skill") as HTMLInputElement;
    let userLanguage = document.getElementById("language") as HTMLInputElement;
    let userAddress = document.getElementById("address") as HTMLInputElement;
    let userPortfolio = document.getElementById("portfolio") as HTMLInputElement;
    let userPicture = document.getElementById("picture") as HTMLInputElement;
    let userProfile = document.getElementById("profile") as HTMLTextAreaElement;
+   let birthDate = document.getElementById('birth-date') as HTMLInputElement;
+   let nationality = document.getElementById('nationality') as HTMLInputElement;
+   let collegeSub = document.getElementById('college-sub') as HTMLInputElement;
+   let schoolSub = document.getElementById('school-sub') as HTMLInputElement;
 // HTML Form
 let resumeForm = document.querySelector(".resume-form") as HTMLFormElement;
 
+//Form Error
+let formError = document.querySelector('.error') as HTMLElement;
+let errorBtn = document.querySelector('.error button') as HTMLButtonElement;
+
+//Form Submit Successfully
+let formSuccess = document.querySelector('.success') as HTMLElement;
+let successBtn = document.querySelector('.success button') as HTMLButtonElement;
 
 
 //Set Input Field Empty
@@ -40,7 +50,7 @@ const emptyInput = () => {
     universityPeriod.value = '';
     lastCompany.value = '';
     periodCompany.value = '';
-    workExperience.value = '';
+    // workExperience.value = '';
     userAddress.value = '';
     userPortfolio.value = '';
     userProfile.value = '';
@@ -53,9 +63,8 @@ const emptyInput = () => {
 //Handle Name
 let userTrue = false;
 userName?.addEventListener("input", (e) => {
-    if (userName.value.trim() === "" || userName.value.length < 8) {
-        // console.log(userName.nextElementSibling);
-      (userName.nextElementSibling as HTMLElement).textContent = "Please Enter a username atleast 8 character";
+    if (userName.value.trim() === "" || userName.value.length < 3) {
+      (userName.nextElementSibling as HTMLElement).textContent = "Please Enter a username atleast 3 character";
       setTimeout(() => {
         (userName.nextElementSibling as HTMLElement).textContent = "";
       }, 3000);
@@ -97,8 +106,8 @@ userNum?.addEventListener("input",() => {
 // Handle Job Title
 let jobTrue = false;
 userJob?.addEventListener("input",() => {
-    if(userJob.value.trim() === "" || userJob.value.length<8){
-        (userJob.nextElementSibling as HTMLElement).textContent = "Please Enter Job Name atleast 8 character";
+    if(userJob.value.trim() === "" || userJob.value.length<10){
+        (userJob.nextElementSibling as HTMLElement).textContent = "Please Enter Job Name atleast 10 character";
         setTimeout(() => {
             (userJob.nextElementSibling as HTMLElement).textContent = "";
           }, 3000);
@@ -206,6 +215,34 @@ universitySub?.addEventListener("input",() => {
     }
 });
 
+// Handle College Subject
+let collegeSubTrue = false;
+collegeSub?.addEventListener("input",() => {
+    if(collegeSub.value.trim() === "" || collegeSub.value.length<4){
+        (collegeSub.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 4 character";
+        setTimeout(() => {
+            (collegeSub.nextElementSibling as HTMLElement).textContent = "";
+          }, 3000);
+        collegeSubTrue = false;
+    }else{
+        collegeSubTrue = true;
+    }
+});
+
+// Handle School Subject
+let schoolSubTrue = false;
+schoolSub?.addEventListener("input",() => {
+    if(schoolSub.value.trim() === "" || schoolSub.value.length<4){
+        (schoolSub.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 4 character";
+        setTimeout(() => {
+            (schoolSub.nextElementSibling as HTMLElement).textContent = "";
+          }, 3000);
+        schoolSubTrue = false;
+    }else{
+        schoolSubTrue = true;
+    }
+});
+
 // Handle College Period
 let universityPeriodTrue = false;
 universityPeriod?.addEventListener("input",() => {
@@ -217,6 +254,20 @@ universityPeriod?.addEventListener("input",() => {
         universityPeriodTrue = false;
     }else{
         universityPeriodTrue = true;
+    }
+});
+
+// Handle College Period
+let birthDateTrue = false;
+birthDate?.addEventListener("change",() => {
+    if(birthDate.value.trim() === "" || birthDate.value.length === 0){
+        (birthDate.nextElementSibling as HTMLElement).textContent = "Please Enter Birth Date";
+        setTimeout(() => {
+            (birthDate.nextElementSibling as HTMLElement).textContent = "";
+          }, 3000);
+        birthDateTrue = false;
+    }else{
+        birthDateTrue = true;
     }
 });
 
@@ -275,20 +326,6 @@ periodCompany?.addEventListener("input",() => {
     }
 });
 
-// Handle Last Company Period
-let lastCompanyWorkTrue = false;
-workExperience?.addEventListener("input",() => {
-    if(workExperience.value.trim() === "" || workExperience.value.length < 20){
-        (workExperience.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 20 character";
-        setTimeout(() => {
-            (workExperience.nextElementSibling as HTMLElement).textContent = "";
-          }, 3000);
-        lastCompanyWorkTrue = false;
-    }else{
-        lastCompanyWorkTrue = true;
-    }
-});
-
 // Handle User Language
 let userLanguageTrue = false;
 userLanguage?.addEventListener("input",() => {
@@ -313,6 +350,19 @@ userProfile?.addEventListener("input",() => {
         profileTrue = false;
     }else{
         profileTrue = true;
+    }
+});
+// Handle Nationality
+let nationalityTrue = false;
+nationality?.addEventListener("input",() => {
+    if(nationality.value.trim() === "" || nationality.value.length < 4){
+        (nationality.nextElementSibling as HTMLElement).textContent = "Please Enter atleast 4 character";
+        setTimeout(() => {
+            (nationality.nextElementSibling as HTMLElement).textContent = "";
+          }, 3000);
+        nationalityTrue = false;
+    }else{
+        nationalityTrue = true;
     }
 });
 
@@ -382,10 +432,10 @@ let resumeObj:Resume;
 resumeForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    if(userTrue && emailTrue && numberTrue && jobTrue && lastJobTrue && lastCompanyTrue && lastCompanyPeriodTrue && lastCompanyWorkTrue && addressTrue && portfolioTrue && pictureTrue && profileTrue && userLanguageTrue && skillTrue && schoolNameTrue && schoolPeriodTrue && collegeNameTrue && collegePeriodTrue && universityNameTrue && universityPeriodTrue && universitySubTrue) {
+    if(userTrue && emailTrue && numberTrue && jobTrue && lastJobTrue && lastCompanyTrue && lastCompanyPeriodTrue && schoolSubTrue && collegeSubTrue && birthDateTrue && nationalityTrue && addressTrue && portfolioTrue && pictureTrue && profileTrue && userLanguageTrue && skillTrue && schoolNameTrue && schoolPeriodTrue && collegeNameTrue && collegePeriodTrue && universityNameTrue && universityPeriodTrue && universitySubTrue) {
         try {
             let base64Image = await handleImg();
-            alert("Congratulations, Your form has been submitted.");
+            // alert("Congratulations, Your form has been submitted.");
             resumeObj = {
                 name: userName.value,
                 number: userNum.value,
@@ -394,7 +444,7 @@ resumeForm?.addEventListener("submit", async (e) => {
                 lastJob: lastJob.value,
                 lastCompany: lastCompany.value,
                 periodCompany: periodCompany.value,
-                work: workExperience.value,
+                // work: workExperience.value,
                 address: userAddress.value,
                 portfolio: userPortfolio.value,
                 profile: userProfile.value,
@@ -408,17 +458,32 @@ resumeForm?.addEventListener("submit", async (e) => {
                 universityPeriod: universityPeriod.value,
                 universitySub: universitySub.value,
                 img: base64Image as string,
+                birthDate:birthDate.valueAsDate,
+                collegeSub:collegeSub.value,
+                schoolSub:schoolSub.value,
+                nationality:nationality.value
             };
 
             localStorage.setItem("Resume-Data", JSON.stringify(resumeObj));
-            window.location.href = './component/resume.html';
+            formSuccess.classList.add('show');
+        formSuccess.classList.remove('hide');
+        successBtn.addEventListener('click',() => {
+            formSuccess.classList.add('hide');
+        formSuccess.classList.remove('show');
+        window.location.href = '../component/resume.html';
+        });
             emptyInput();
         } catch (error) {
             console.log(error)
         }
            
     } else {
-        alert("Sorry, Your Form has not been Submit.");
+        formError.classList.add('show');
+        formError.classList.remove('hide');
+        errorBtn.addEventListener('click',() => {
+            formError.classList.add('hide');
+        formError.classList.remove('show');
+        });
     }
 });
 

@@ -2,301 +2,285 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", system-ui;
-    font-weight: 400;
-    font-style: normal;
-   
+    font-family: "Poppins", serif;
+  font-weight: 400;
 }
 body{
-    overflow-x: hidden;
+    background-color: #e4e5e6;
+}
+.resume-section{
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 30px;
 }
-.cv{
-    /* position: fixed; */
-    top: 0;
+.resume{
+    background-color: #ffff;
+    /* border-radius: 5px;  */
+}
+.resume-head{
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 2px solid  #b2bec3;
+    background-color: #F4F4F4;
+}
+.name-jobtitle h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    /* font-family: "Anton", sans-serif; */
+     font-family: "New Amsterdam", serif;
+     /* font-family: "Anton SC", sans-serif; */
+    /* letter-spacing: 3px; */
+    font-weight: bold;
+}
+.name-jobtitle h2{
+    font-size: 35px;
+    text-transform: uppercase;
+    /* font-family: "Anton", sans-serif; */
+     font-family: "New Amsterdam", serif;
+     /* font-family: "Anton SC", sans-serif; */
+    /* letter-spacing: 3px; */
+    font-weight: bold;
+}
+.profile-img img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 10%;
+    border: 2px solid #b2bec3;
+    padding: 5px;
+}
+.resume-body{
+    /* padding-top: 15px; */
+    display: flex;
+}
+/* left */
+.resume-left{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: -100;
-}
-.downladPdf{
-    background-color: rgb(235, 206, 169);
-    padding: 15px 30px;
-    border: none;
-    border-radius: 15px;
-    position: relative;
-    top: 20px;
-    font-family: "New Amsterdam", system-ui;
-    font-weight: 400;
-    font-size: 20px;
-    color: #fff;
-    cursor: pointer;
-}
-.editbtn{
-    background-color: rgb(235, 206, 169);
-    padding: 15px 30px;
-    border: none;
-    border-radius: 15px;
-    position: relative;
-    top: 20px;
-    font-family: "New Amsterdam", system-ui;
-    font-weight: 400;
-    font-size: 20px;
-    color: #fff;
-    cursor: pointer;   
-}
-.generate-url{
-    background-color: rgb(235, 206, 169);
-    padding: 15px 30px;
-    border: none;
-    border-radius: 15px;
-    position: relative;
-    top: 20px;
-    font-family: "New Amsterdam", system-ui;
-    font-weight: 400;
-    font-size: 20px;
-    color: #fff;
-    cursor: pointer;   
-}
-.resume{
-    margin:50px 0;
-    /* margin-left: -150px; */
-    width: 70vw;
-    /* padding: 40px 0; */
-    /* border: 2px solid black; */
-    border-radius: 5px;
-    background-color: rgb(230, 200, 162);
-    z-index: -1;
-}
-.user-img-name{
-    background-color: burlywood;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 20px 0;
-}
-
-.usr-img img{
-    width: 200px;     
-    height: 200px;     /* Set the desired height */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    border-radius: 50%;
-    position: relative;
-    top: 5px;
-}
-.user-name {
-    border-bottom: 2px solid black;
+    padding:10px;
+    width: 330px;
     padding-bottom: 30px;
 }
-.user-name h1{
-    font-size: 60px;
-    font-family: "New Amsterdam", system-ui;
-    font-weight: 400;
+.personal{
+    width: 250px;
 }
-.user-name h2{
-    font-family: "New Amsterdam", system-ui;
-    font-weight: 400;
-    /* font-size: 25px; */
+.personal h3{
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 30px;
+    border-bottom: 2px solid #b2bec3;
+     font-family: "New Amsterdam", serif;
+    color: #292929;
 }
-.contect-about{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    position: relative;
-    left: 40px;
-    padding: 40px 0;
+.pers-box{
+    border-bottom: 1px solid #b2bec3;
+    padding-top: 5px;
 }
-.contact h3{
-    font-family: "New Amsterdam", system-ui;
-    font-weight: 400;
-    padding-bottom: 6px;
-    font-size: 25px;
+.pers-box h4{
+    font-weight: bold;
 }
-.contact p{
-    padding-bottom: 5px;
-    /* width: 5px; */
+.pers-box p{
+    color: #818283;
     font-size: 15px;
 }
-.about h3{
-    font-family: "New Amsterdam", system-ui;
-    font-weight: 400;
-    padding-bottom: 5px;
-    font-size: 25px;
+.contact{
+    width: 250px;
+    padding-top: 30px;
 }
-.about p{
-    width: 23vw;
-    word-wrap: break-word; /* Ensure long words or URLs break and wrap onto the next line */
-  white-space: pre-wrap; 
+.contact h3{
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 30px;
+    border-bottom: 2px solid #b2bec3;
+    /* font-family: "Anton SC", sans-serif; */
+     font-family: "New Amsterdam", serif;
+    color: #292929;
 }
-.education-experience{
+.contct-box{
+    border-bottom: 1px solid #b2bec3;
+    padding-top: 5px;
+}
+.contct-box h4{
+    font-weight: bold;
+}
+.contct-box p{
+    color: #818283;
+    font-size: 15px;
+}
+.skills{
+    width: 250px;
+    padding-top:30px;
+}
+.skills h3{
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 30px;
+    border-bottom: 2px solid #b2bec3;
+    /* font-family: "Anton SC", sans-serif; */
+     font-family: "New Amsterdam", serif;
+    color: #292929;
+}
+.skill-list{
+    padding-top:10px ;
+    list-style: none;
     display: flex;
-    justify-content: space-evenly;
-    position: relative;
-    left: 70px;
-    padding-bottom: 40px;
-}
-.education{
+    flex-direction: column;
+    gap: 10px;
+    color: #818283;
+    font-size: 15px;
     text-transform: uppercase;
-    /* font-weight: 800; */
 }
-.education h3{
-    font-family: "New Amsterdam", system-ui;
-    font-weight: 400;
-    padding-bottom: 5px;
-    font-size: 25px;
-}
-.work-experience{
-    border-left: 2px solid black;
-    padding-left: 25px;
-}
-.work-experience h3{
-    font-family: "New Amsterdam", system-ui;
-    font-weight: 400;
-    padding-bottom: 5px;
-    font-size: 25px;
-}
-.work p{
-    width: 23vw;
-    padding-bottom: 5px;
-    /* font-weight:700; */
-    word-wrap: break-word; /* Ensure long words or URLs break and wrap onto the next line */
-    white-space: pre-wrap; 
-}
-.work h4{
-    font-weight: 500;
-}
-.work h5{
-    padding-bottom: 5px;
-    font-weight:600;
-}
-.work h6{
-    font-weight: 600;
-}
-.skill-language{
+/* right */
+.resume-right{
     display: flex;
-    justify-content: space-evenly;
-    text-transform: uppercase;
-    position: relative;
-    left: -70px;
+    flex-direction: column;
+    border-left: 2px solid #b2bec3;
+    padding: 10px 20px ;
     padding-bottom: 30px;
 }
-.skill-language h3{
-    font-family: "New Amsterdam", system-ui;
-    font-weight: 400;
-    padding-bottom: 5px;
-    font-size: 25px;   
+.profile{
+    padding-left: 40px;
 }
-.skill-language ul {
-    list-style: square;
-    /* padding-left: 90px; */
-    position: relative;
-    left: 30px;
+.profile h3{
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 30px;
+    border-bottom: 2px solid #b2bec3;
+    /* font-family: "Anton SC", sans-serif; */
+     font-family: "New Amsterdam", serif;
 }
-.data-not-found{
+.profile p{
+    width: 500px;
+    padding: 15px 0;
+    font-size: 15px;
+    color: #818283;
+    word-wrap: break-word; 
+  white-space: pre-wrap;
+}
+.experience{
+    padding-left: 40px;
+    /* padding-top: 20px; */
+}
+.experience h3{
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 30px;
+    border-bottom: 2px solid #b2bec3;
+    /* font-family: "Anton SC", sans-serif; */
+     font-family: "New Amsterdam", serif;
+}
+.work-list{
+    padding-top: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column;
+    gap: 10px;
 }
-.data-not-found h1{
-    font-size: 35px;
-    color: crimson;
-}
-.loading{
+.work-box{
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    font-size: 35PX;
+    gap: 50px;
 }
-.update-cv{
-    background-color: rgb(206, 195, 195);
-    z-index: 10;
+.work-img{
     position: relative;
-    top: 50px;
 }
-.update-cv h1{
-    font-family: "New Amsterdam", system-ui;
-    font-weight: 400;   
-    text-align: center;
-    padding: 10px;
+.work-img img{
+    width: 70px;
 }
-.hide{
-    display: none;
+.work-img p{
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    /* font-weight: 700; */
+    color: white;    
+    font-size: 9px;
+    
 }
-@media only screen and (max-width:1200px){
-    .resume{
-        width: 80vw;
-    }
+.company-job h4{
+    font-weight: bold;
 }
-@media only screen and (max-width:930px){
-    .resume{
-        width: 90vw;
-    }
+.company-job p{
+    color: #818283;
+    font-size: 13px;
+    text-transform: uppercase;
 }
-@media only screen and (max-width:778px){
-    .user-img-name{
-        flex-direction: column;
-    }
-    .contect-about{
-        flex-direction: column;
-        padding: 20px 0;
-    }
-    .about{
-
-        padding: 20px 0;
-    }
-    .about p{
-        width: 40vw;
-    }
-    .education-experience{
-        flex-direction: column;
-        align-items: center;
-        left: 30px;
-    }
-    .work-experience{
-        border: none;
-        padding: 10px;
-    }
-    .work-experience p{
-        width: 40vw;
-    }
+.work-list h4{
+    text-transform: uppercase;
 }
-@media only screen and (max-width:600px) {
-    .about p{
-        width: 60vw;
-    }
-    .work-experience p{
-        width: 60vw;
-    }
-    .skill-language{
-        flex-direction: column;
-        align-items: center;
-    }
-    .skills{
-        padding-top: 20px;
-    }
+.education-list h4{
+    text-transform: uppercase;
 }
-@media only screen and (max-width:505px) {
-    .resume{
-        width: 100vw;
-    }
-    .contact p{
-        font-size: 13px;
-        /* width: 1; */
-    }
+.education{
+    padding-left: 40px;
+    padding-top: 30PX;
 }
-
-@media only screen and (max-width:417px) {
-    .editbtn{
-        font-size: 15px;
-    }
-    .downladPdf{
-        font-size: 15px;
-    }
-    .generate-url{
-        font-size: 15px;
-    }
+.education h3{
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 30px;
+    border-bottom: 2px solid #b2bec3;
+    /* font-family: "Anton SC", sans-serif; */
+     font-family: "New Amsterdam", serif;
+}
+.education-list{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.education-box{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.education-img{
+    position: relative;
+}
+.education-img img{
+    width: 70px;
+}
+.education-img p{
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    /* font-weight: 700; */
+    color: white;    
+    font-size: 9px;
+}
+.school-college h4{
+    font-weight: bold;
+}
+.school-college p{
+    color: #818283;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.language{
+    /* width: 250px; */
+    padding-left: 40px;
+    padding-top:30px;
+}
+.language h3{
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 30px;
+    border-bottom: 2px solid #b2bec3;
+    /* font-family: "Anton SC", sans-serif; */
+     font-family: "New Amsterdam", serif;
+    color: #292929;
+}
+.language-list{
+    padding-top:10px ;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #818283;
+    font-size: 15px;
+    text-transform: uppercase;
 }

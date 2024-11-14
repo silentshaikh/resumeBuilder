@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder - Create Your Professional Resume</title>
+    <link rel="stylesheet" href="../styles/form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Anton+SC&family=Cherry+Bomb+One&family=New+Amsterdam&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <img src="../images/human-resources-search-isolated_24877-44461-fotor-bg-remover-2024111314738.png" alt="logo">
+        <h1>RESUME BUILDER</h1>
+       </header> 
+    <main>
+        <div class="error hide">
+            <p>All fields are required. Please complete the form before submitting</p>
+            <button>Okay</button>
+        </div>
+        <div class="success hide">
+            <p>Your resume has been successfully edited!</p>
+            <button>Let's Check</button>
+        </div>
+        <section>
+            <form action="" class="resume-form">
+                <div class="form-row-1">
+                   <div class="form-1">
+                    <label for="">Full Name:</label>
+                    <input type="text" name="" id="username" placeholder="Enter Your Name">
+                    <p></p>
+                   </div>
+                    <div class="form-1">
+                        <label for="">Email:</label>
+                        <input type="text" name="" id="useremail" placeholder="Enter Your Email">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="form-row-2">
+                    <div class="form-1">
+                     <label for="">Phone Number:</label>
+                     <input type="text" name="" id="usernumber" placeholder="Enter Your Number">
+                     <p></p>
+                    </div>
+                     <div class="form-1">
+                         <label for="">Job Title:</label>
+                         <input type="text" name="" id="userjob" placeholder="Enter Your Job Title">
+                         <p></p>
+                     </div>
+                 </div>
+                 <div class="form-row-3">
+                    
+                    <div class="form-1 education">
+                        <label for="">Your Education :</label>
+                        <input type="text" name="" id="schoolname" placeholder="Enter Your School Name">
+                        <p></p>
+                        <input type="text" name="" id="schoolperiod" placeholder="Enter Your School Period">
+                        <p></p>
+                        <input type="text" name="" id="collegename" placeholder="Enter Your College Name">
+                        <p></p>
+                        <input type="text" name="" id="collegeperiod" placeholder="Enter Your College Period">
+                        <p></p>
+                        <input type="text" name="" id="university" placeholder="Enter Your University Name">
+                        <p></p>
+                        <input type="text" name="" id="universitysub" placeholder="Enter Your University Subject">
+                        <p></p>
+                        <input type="text" name="" id="universityperiod" placeholder="Enter Your University Period">
+                        <p></p>
+                    </div>
+                     <div class="form-1 work">
+                         <label for="">Work Experience :</label>
+                         <input type="text" name="" id="job" placeholder="Enter Your Last Job">
+                         <p></p>
+                         <input type="text" name="" id="company" placeholder="Enter Your Last Company">
+                         <p></p>
+                         <input type="text" name="" id="period" placeholder="Enter Your Employment Period">
+                         <p></p>
+                         <input type="text" name="" id="nationality" placeholder="Enter Your Nationality">
+                         <p></p>
+                         <input type="text" name="" id="school-sub" placeholder="Enter Your School Subject">
+                         <p></p>
+                         <input type="text" name="" id="college-sub" placeholder="Enter Your College Subject">
+                         <p></p>
+                     </div>
+                 </div>
+                 <div class="form-row-4">
+
+                     <div class="form-1">
+                         <label for="">Your Skill:</label>
+                         <input type="text" name="" id="skill" placeholder="Enter Your Skill Seprated by One Space">
+                         <p></p>
+                        </div>
+                        <div class="form-1">
+                            <label for="">Your Language :</label>
+                            <input type="text" name="" id="language" placeholder="Enter Your Language Seprated by One Space">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="form-row-5">
+
+                      <div class="form-double">
+                        <div class="form-1 contact">
+                            <label for="">Your Contect Details:</label>
+                            <input type="text" name="" id="address" placeholder="Enter Your Address">
+                            <p></p>
+                            <input type="text" name="" id="portfolio" placeholder="Enter Your Portfolio Link">
+                            <p></p>
+                           </div>
+                           <div class="form-1 contact">
+                            <label for="">Your Picture:</label>
+                            <input type="file" name="" id="picture" accept=".jpg,.jpeg,.webp,.png">
+                            <p></p>
+                        </div>
+                        <div class="form-1">
+                            <label for="">Your Birth Date:</label>
+                            <input type="date" name="" id="birth-date" placeholder="Enter Your Birth Date">
+                         <p></p>
+                        </div>
+                      </div>
+                           <div class="form-1">
+                            <label for="">Your Profile:</label>
+                               <textarea name="" id="profile" rows="13" placeholder="Enter Your Profile"></textarea>
+                               <p></p>
+                           </div>
+                       </div>
+
+                       <button class="resume-btn">Submit</button>
+                 
+              
+            </form>
+        </section>
+    
+    </main>
+    <footer class="footer">
+        <p>&copy; Copyright - <strong>Resume Builder</strong> - All Right Reserved</p>
+       </footer>
+
+    <script type="module" src="../dist/app.js"></script>
+</body>
+</html>
